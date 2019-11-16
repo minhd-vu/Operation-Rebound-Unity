@@ -6,6 +6,7 @@ public class ZombieController : MonoBehaviour
 {
     //public Transform target;
     public float moveSpeed;
+    public float rotationOffset;
     private Rigidbody2D rb;
     private bool moving;
     private Vector3 direction;
@@ -39,7 +40,7 @@ public class ZombieController : MonoBehaviour
             rb.velocity = direction;
 
             // Rotate the object smoothly in the direction of the velocity.
-            Quaternion target = Quaternion.AngleAxis(Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg, Vector3.forward);
+            Quaternion target = Quaternion.AngleAxis(Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg + rotationOffset, Vector3.forward);
             transform.rotation = Quaternion.Slerp(transform.rotation, target, rb.velocity.magnitude * moveSpeed * Time.deltaTime);
 
             movingTimer += Time.deltaTime;
