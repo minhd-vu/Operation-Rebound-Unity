@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6e4e4fc705376343a3e65b25d94f0e2, type: 3}
+  m_Name: Blue Gray
+  m_EditorClassIdentifier: 
+  m_Sprites:
+  - {fileID: -8691520343226972117, guid: afed7858479fb7f4d9e295098cfc688f, type: 3}
+  - {fileID: -4082961304118869192, guid: afed7858479fb7f4d9e295098cfc688f, type: 3}
+  - {fileID: 82819157831176023, guid: afed7858479fb7f4d9e295098cfc688f, type: 3}
+  - {fileID: -4912920557235919909, guid: afed7858479fb7f4d9e295098cfc688f, type: 3}
+  - {fileID: -7307093431040889219, guid: afed7858479fb7f4d9e295098cfc688f, type: 3}
+  - {fileID: -3791777550110773143, guid: afed7858479fb7f4d9e295098cfc688f, type: 3}
+  - {fileID: -5885200037920185885, guid: afed7858479fb7f4d9e295098cfc688f, type: 3}
+  - {fileID: 8463673696781631211, guid: afed7858479fb7f4d9e295098cfc688f, type: 3}
+  - {fileID: -1963676069494008366, guid: afed7858479fb7f4d9e295098cfc688f, type: 3}
+  - {fileID: -2339193521767127705, guid: afed7858479fb7f4d9e295098cfc688f, type: 3}
+  - {fileID: 2304237280261875306, guid: afed7858479fb7f4d9e295098cfc688f, type: 3}
+  - {fileID: -8833185254838295255, guid: afed7858479fb7f4d9e295098cfc688f, type: 3}
+  - {fileID: -1919255533947899807, guid: afed7858479fb7f4d9e295098cfc688f, type: 3}
+  - {fileID: -637503866058443765, guid: afed7858479fb7f4d9e295098cfc688f, type: 3}
+  - {fileID: 4697951258413968968, guid: afed7858479fb7f4d9e295098cfc688f, type: 3}
