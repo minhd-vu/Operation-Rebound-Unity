@@ -17,6 +17,9 @@ public class ZombieController : MonoBehaviour
     private float waitingTime;
     private float waitingTimer;
 
+    public float attackDamage;
+    private float health;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +31,8 @@ public class ZombieController : MonoBehaviour
         movingTimer = 0;
         waitingTime = Random.Range(1f, 2f);
         waitingTimer = Random.Range(0f, 2f);
+
+        health = 1f;
     }
 
     // Update is called once per frame
@@ -68,8 +73,18 @@ public class ZombieController : MonoBehaviour
     {
         if (collision.gameObject.name.Equals("Player"))
         {
-            Debug.Log("Collision!");
+            PlayerController player = collision.gameObject.GetComponent<PlayerController>();
+            player.damage(attackDamage);
+        }
+    }
 
+    public void damage(float damage)
+    {
+        health -= damage;
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 }

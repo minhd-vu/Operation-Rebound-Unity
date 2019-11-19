@@ -536,6 +536,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   rotationOffset: 90
+  damage: 0.1
 --- !u!50 &343621270
 Rigidbody2D:
   serializedVersion: 4
@@ -5713,6 +5714,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   rotationOffset: 90
+  damage: 0.1
 --- !u!50 &1082755635
 Rigidbody2D:
   serializedVersion: 4
@@ -6517,6 +6519,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   rotationOffset: 0
+  damage: 0.1
 --- !u!1 &1803523733
 GameObject:
   m_ObjectHideFlags: 0

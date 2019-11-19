@@ -9,14 +9,15 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public float rotateSpeed;
 
-    public static float health;
+    private float health;
+
     public Image healthBar;
     private Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        health = 0.8f;
+        health = 1f;
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -48,5 +49,10 @@ public class PlayerController : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.AngleAxis(angle, Vector3.forward), dir.normalized.magnitude * rotateSpeed * Time.deltaTime);
 
         healthBar.fillAmount = health;
+    }
+
+    public void damage(float damage)
+    {
+        health -= damage;
     }
 }

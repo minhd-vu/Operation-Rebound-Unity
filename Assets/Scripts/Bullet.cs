@@ -8,12 +8,14 @@ public class Bullet : MonoBehaviour
     public Rigidbody2D rb;
     public float range;
     private Vector3 initialPosition;
+    private float damage;
 
     // Start is called before the first frame update
     void Start()
     {
         rb.velocity = transform.right * speed;
         initialPosition = transform.position;
+        damage = 0.1f;
     }
 
     // Update is called once per frame
@@ -25,8 +27,14 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D()
+    void OnCollisionEnter2D(Collision2D collision)
     {
+        ZombieController enemy;
+        if ((enemy = collision.gameObject.GetComponent<ZombieController>()) != null)
+        {
+            enemy.damage(damage);
+        }
+
         Destroy(gameObject);
     }
 }
