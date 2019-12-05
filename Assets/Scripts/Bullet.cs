@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour
     public float range;
     private Vector3 initialPosition;
     private float damage;
+    public HealthBar healthBar;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +34,7 @@ public class Bullet : MonoBehaviour
         if ((enemy = collision.gameObject.GetComponent<ZombieController>()) != null)
         {
             enemy.damage(damage);
+            healthBar.target = enemy.transform;
         }
 
         Destroy(gameObject);

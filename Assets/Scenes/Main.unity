@@ -651,7 +651,7 @@ GameObject:
   - component: {fileID: 398456430}
   - component: {fileID: 398456434}
   m_Layer: 5
-  m_Name: HealthBar
+  m_Name: Health Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6849,7 +6849,7 @@ GameObject:
   - component: {fileID: 1935621951}
   - component: {fileID: 1935621950}
   m_Layer: 0
-  m_Name: EventSystem
+  m_Name: Event System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
