@@ -34,7 +34,8 @@ public class Bullet : MonoBehaviour
         if ((enemy = collision.gameObject.GetComponent<ZombieController>()) != null)
         {
             enemy.damage(damage);
-            healthBar.target = enemy.transform;
+            HealthBar hb = Instantiate(healthBar);
+            hb.target = collision.gameObject.transform;
         }
 
         Destroy(gameObject);
