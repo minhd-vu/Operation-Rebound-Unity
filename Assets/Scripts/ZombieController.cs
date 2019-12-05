@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ZombieController : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class ZombieController : MonoBehaviour
 
     public float attackDamage;
     private float health;
+
+    public Image healthBar;
 
     // Start is called before the first frame update
     void Start()
@@ -67,6 +70,7 @@ public class ZombieController : MonoBehaviour
             }
         }
 
+        healthBar.fillAmount = health;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
