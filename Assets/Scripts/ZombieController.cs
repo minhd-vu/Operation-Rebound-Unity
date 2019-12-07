@@ -21,7 +21,7 @@ public class ZombieController : MonoBehaviour
     public float attackDamage;
     private float health;
 
-    public Image healthBar;
+    public GameObject healthBar;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +34,9 @@ public class ZombieController : MonoBehaviour
         movingTimer = 0;
         waitingTime = Random.Range(1f, 2f);
         waitingTimer = Random.Range(0f, 2f);
+
+        healthBar = Instantiate(healthBar);
+        healthBar.GetComponent<HealthBar>().target = transform;
 
         health = 1f;
     }
@@ -70,7 +73,7 @@ public class ZombieController : MonoBehaviour
             }
         }
 
-        healthBar.fillAmount = health;
+        //healthBar.GetComponentInChildren<>
     }
 
     void OnCollisionEnter2D(Collision2D collision)

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2525818274215079748}
   m_Layer: 5
   m_Name: Enemy Health Bar
-  m_TagString: Untagged
+  m_TagString: Enemy Health Bar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -222,7 +222,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.057599984}
+  m_AnchoredPosition: {x: 0, y: 0.057598114}
   m_SizeDelta: {x: 0, y: 0.1152}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2525818275573817405
