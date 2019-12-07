@@ -73,7 +73,7 @@ public class ZombieController : MonoBehaviour
             }
         }
 
-        //healthBar.GetComponentInChildren<>
+        healthBar.GetComponent<HealthBar>().image.fillAmount = health;
     }
 
     void OnCollisionEnter2D(Collision2D collision)

@@ -114,6 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   offset: {x: 0, y: -0.6, z: 0}
+  image: {fileID: 2525818275413052280}
 --- !u!1 &2525818275413052278
 GameObject:
   m_ObjectHideFlags: 0
