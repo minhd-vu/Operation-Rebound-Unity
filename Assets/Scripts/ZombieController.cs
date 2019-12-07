@@ -92,6 +92,7 @@ public class ZombieController : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+            Destroy(healthBar);
         }
     }
 }
