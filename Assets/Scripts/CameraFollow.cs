@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * A simple camera script that statically follows around a transform.
+ */
 public class CameraFollow : MonoBehaviour
 {
     public Transform target;

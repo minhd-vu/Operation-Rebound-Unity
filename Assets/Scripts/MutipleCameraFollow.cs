@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * Camera script used to position the focus of the camera in the cneter of a list of transforms.
+ */
 public class MutipleCameraFollow : MonoBehaviour
 {
     public List<Transform> targets;

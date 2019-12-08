@@ -28,6 +28,11 @@ public class Bullet : MonoBehaviour
         }
     }
 
+    /**
+     * Upon colliding with an enemy:
+     * Damage the enemy,
+     * Destroy the bullet,
+     */
     void OnCollisionEnter2D(Collision2D collision)
     {
         ZombieController enemy;

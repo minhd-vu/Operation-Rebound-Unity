@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * Camera script used to position the focus of the camera between the player's mouse and the player sprite.
+ */
 public class TargetFocusCamera : MonoBehaviour
 {
     public Transform target;

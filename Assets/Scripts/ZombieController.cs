@@ -46,6 +46,7 @@ public class ZombieController : MonoBehaviour
     {
         //rb.velocity = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
 
+        // AI movement.
         if (moving)
         {
             rb.velocity = direction;
@@ -63,6 +64,7 @@ public class ZombieController : MonoBehaviour
         }
         else
         {
+            // Enemy pauses for a moment.
             rb.velocity = Vector3.zero;
             waitingTimer += Time.deltaTime;
             if (waitingTimer > waitingTime)
@@ -72,10 +74,15 @@ public class ZombieController : MonoBehaviour
                 direction = new Vector3(Random.Range(-1f, 1f) * moveSpeed, Random.Range(-1f, 1f) * moveSpeed, 0);
             }
         }
+        // End AI movement.
 
+        // Update the health bar.
         healthBar.GetComponent<HealthBar>().image.fillAmount = health;
     }
 
+    /**
+     * If the enemy collides with the player, damage the player.
+     */
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.name.Equals("Player"))
@@ -85,6 +92,9 @@ public class ZombieController : MonoBehaviour
         }
     }
 
+    /**
+     * Damage the enemy. If the enemy dies, delete the enemy and the healthbar.
+     */
     public void damage(float damage)
     {
         health -= damage;
