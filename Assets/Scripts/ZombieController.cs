@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ZombieController : MonoBehaviour
 {
-    //public Transform target;
+    public Transform target;
     public float moveSpeed;
     public float rotationOffset;
     private Rigidbody2D rb;
@@ -28,7 +28,7 @@ public class ZombieController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         moving = false;
-        //target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
         movingTime = Random.Range(1f, 2f);
         movingTimer = 0;
@@ -44,9 +44,12 @@ public class ZombieController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //rb.velocity = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+        rb.velocity = -Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+        Quaternion targetr = Quaternion.AngleAxis(Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg + rotationOffset, Vector3.forward);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetr, rb.velocity.magnitude * moveSpeed * Time.deltaTime);
 
         // AI movement.
+        /*
         if (moving)
         {
             rb.velocity = direction;
@@ -74,6 +77,7 @@ public class ZombieController : MonoBehaviour
                 direction = new Vector3(Random.Range(-1f, 1f) * moveSpeed, Random.Range(-1f, 1f) * moveSpeed, 0);
             }
         }
+        */
         // End AI movement.
 
         // Update the health bar.
