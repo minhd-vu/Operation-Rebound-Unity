@@ -46,7 +46,8 @@ public class PlayerController : MonoBehaviour
          **/
         Vector3 dir = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.AngleAxis(angle, Vector3.forward), dir.normalized.magnitude * rotateSpeed * Time.deltaTime);
+        //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.AngleAxis(angle, Vector3.forward), dir.normalized.magnitude * rotateSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
         healthBar.fillAmount = health;
     }
