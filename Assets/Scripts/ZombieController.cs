@@ -22,6 +22,8 @@ public class ZombieController : MonoBehaviour
     private float health;
 
     public GameObject healthBar;
+    private float healthBarTime;
+    private float healthBarTimer;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +39,10 @@ public class ZombieController : MonoBehaviour
 
         healthBar = Instantiate(healthBar);
         healthBar.GetComponent<HealthBar>().target = transform;
+        healthBar.SetActive(false);
+
+        healthBarTime = 5f;
+        healthBarTimer = 0f;
 
         health = 1f;
     }
@@ -84,7 +90,18 @@ public class ZombieController : MonoBehaviour
         // End AI movement.
 
         // Update the health bar.
-        healthBar.GetComponent<HealthBar>().image.fillAmount = health;
+        if (healthBar.activeSelf)
+        {
+            // Update the visual values.
+            healthBar.GetComponent<HealthBar>().image.fillAmount = health;
+
+            // Make the healthbar disappear after a period of inactivity.
+            healthBarTimer += Time.fixedDeltaTime;
+            if (healthBarTimer > healthBarTime)
+            {
+                healthBar.SetActive(false);
+            }
+        }
     }
 
     /**
@@ -105,6 +122,8 @@ public class ZombieController : MonoBehaviour
     public void damage(float damage)
     {
         health -= damage;
+        healthBar.SetActive(true);
+        healthBarTimer = 0f;
 
         if (health <= 0)
         {
