@@ -44,15 +44,9 @@ public class ZombieController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Vector3 dir = (target.transform.position - rb.transform.position).normalized;
-        if (Vector3.Distance(target.transform.position, rb.transform.position) > 0)
-        {
-            rb.MovePosition(rb.transform.position + dir * moveSpeed * Time.fixedDeltaTime);
-        }
-
-        //rb.velocity = -Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+        rb.velocity = (target.transform.position - rb.transform.position).normalized * moveSpeed;
         Quaternion targetr = Quaternion.AngleAxis(Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg + rotationOffset, Vector3.forward);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetr, rb.velocity.magnitude * moveSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetr, rb.velocity.magnitude * moveSpeed * Time.fixedDeltaTime);
 
         // AI movement.
         /*
