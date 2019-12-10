@@ -40,8 +40,9 @@ public class Bullet : MonoBehaviour
         if ((enemy = collision.gameObject.GetComponent<ZombieController>()) != null)
         {
             enemy.damage(damage);
-            GameObject clone = Instantiate(damageIndicator, enemy.transform.position, Quaternion.Euler(Vector3.zero));
-            clone.GetComponent<NumberIndicator>().number = (int)(damage * 100);
+
+            // Create damage numbers appear after an enemy being damaged.
+            //Instantiate(damageIndicator, enemy.transform.position, Quaternion.Euler(Vector3.zero)).GetComponent<NumberIndicator>().number = (int)(damage * 100);
         }
 
         Destroy(gameObject);
