@@ -6617,6 +6617,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 560733256}
   bullet: {fileID: 4642350767651844583, guid: d321ae8ac31d6c24cada09e5a3b8823f, type: 3}
+  maxBullets: 10
 --- !u!50 &1803523738
 Rigidbody2D:
   serializedVersion: 4
