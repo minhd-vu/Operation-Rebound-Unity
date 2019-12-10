@@ -10,27 +10,57 @@ public class Weapon : MonoBehaviour
     private int bullets;
     public int maxBullets = 10;
 
+    public float reloadTime;
+    private float reloadTimer;
+    private bool reloading = false;
+
     // Start is called before the first frame update
     void Start()
     {
         bullets = maxBullets;
+        reloadTimer = 0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (!reloading)
         {
-            Shoot();
+            if (Input.GetButtonDown("Fire1"))
+            {
+                Shoot();
+            }
+
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                reloading = true;
+            }
+        }
+
+        else if ((reloadTimer += Time.deltaTime) >= reloadTime)
+        {
+            Reload();
         }
     }
 
     /**
      * Create and fire the bullet.
+     * Reload if the weapon runs out of bullets.
      */
     void Shoot()
     {
         Instantiate(bullet, firePoint.position, firePoint.rotation);
-        --bullets;
+
+        if (--bullets <= 0)
+        {
+            reloading = true;
+        }
+    }
+
+    void Reload()
+    {
+        bullets = maxBullets;
+        reloadTimer = 0f;
+        reloading = false;
     }
 }
