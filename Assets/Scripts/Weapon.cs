@@ -33,13 +33,16 @@ public class Weapon : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.R))
             {
-                reloading = true;
+                Reload();
             }
         }
 
         else if ((reloadTimer += Time.deltaTime) >= reloadTime)
         {
-            Reload();
+            AudioManager.instance.Play("Finish Reload");
+            bullets = maxBullets;
+            reloadTimer = 0f;
+            reloading = false;
         }
     }
 
@@ -53,14 +56,13 @@ public class Weapon : MonoBehaviour
 
         if (--bullets <= 0)
         {
-            reloading = true;
+            Reload();
         }
     }
 
     void Reload()
     {
-        bullets = maxBullets;
-        reloadTimer = 0f;
-        reloading = false;
+        AudioManager.instance.Play("Start Reload");
+        reloading = true;
     }
 }

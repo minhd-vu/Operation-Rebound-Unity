@@ -5708,7 +5708,39 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Enemy Attack
     clip: {fileID: 8300000, guid: 207f22b42e273dd49973e5cafb208c81, type: 3}
-    volume: 1
+    volume: 0.06
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Enemy Death
+    clip: {fileID: 8300000, guid: 743178930ba31424f8b11fee47b92091, type: 3}
+    volume: 0.01
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Hell
+    clip: {fileID: 8300000, guid: f18fd46114eb80741a866b6848b42d3f, type: 3}
+    volume: 0.01
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: Start Reload
+    clip: {fileID: 8300000, guid: 84f28b379d0ff9847a799576cb770b19, type: 3}
+    volume: 0.05
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Finish Reload
+    clip: {fileID: 8300000, guid: 117c05e1d2ae46545adc419a2d2f2aa7, type: 3}
+    volume: 0.05
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0

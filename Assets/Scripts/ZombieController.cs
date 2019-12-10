@@ -113,6 +113,7 @@ public class ZombieController : MonoBehaviour
         {
             PlayerController player = collision.gameObject.GetComponent<PlayerController>();
             player.damage(attackDamage);
+            AudioManager.instance.Play("Enemy Attack");
         }
     }
 
@@ -127,6 +128,7 @@ public class ZombieController : MonoBehaviour
 
         if (health <= 0)
         {
+            AudioManager.instance.Play("Enemy Death");
             Destroy(gameObject);
             Destroy(healthBar);
         }
