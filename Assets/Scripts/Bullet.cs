@@ -19,6 +19,7 @@ public class Bullet : MonoBehaviour
         rb.velocity = transform.right * speed;
         initialPosition = transform.position;
         damage = 0.1f;
+        AudioManager.instance.Play("Fire Bullet");
     }
 
     // Update is called once per frame

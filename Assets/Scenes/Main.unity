@@ -5697,25 +5697,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b2fd117f43a0c7449dede79867ff9c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mixerGroup: {fileID: 0}
   sounds:
   - name: Fire Bullet
     clip: {fileID: 8300000, guid: 4e58feb680cbd6a40aecbc75fa16c055, type: 3}
-    volume: 0.61
+    volume: 0.02
     volumeVariance: 0
-    pitch: 0
+    pitch: 1
     pitchVariance: 0
     loop: 0
-    mixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: Enemy Attack
     clip: {fileID: 8300000, guid: 207f22b42e273dd49973e5cafb208c81, type: 3}
-    volume: 0.82
+    volume: 1
     volumeVariance: 0
-    pitch: 0
+    pitch: 1
     pitchVariance: 0
     loop: 0
-    mixerGroup: {fileID: 0}
     source: {fileID: 0}
 --- !u!1 &1082755633
 GameObject:

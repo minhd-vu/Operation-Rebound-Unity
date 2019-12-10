@@ -50,7 +50,6 @@ public class Weapon : MonoBehaviour
     void Shoot()
     {
         Instantiate(bullet, firePoint.position, firePoint.rotation);
-        AudioManager.instance.Play("Fire Bullet");
 
         if (--bullets <= 0)
         {
