@@ -11,6 +11,7 @@ public class Bullet : MonoBehaviour
     private float damage;
     public HealthBar healthBar;
     public GameObject damageIndicator;
+    public GameObject bulletParticles;
 
     // Start is called before the first frame update
     void Start()
@@ -39,10 +40,12 @@ public class Bullet : MonoBehaviour
         ZombieController enemy;
         if ((enemy = collision.gameObject.GetComponent<ZombieController>()) != null)
         {
+            // Damage the enemy.
             enemy.damage(damage);
 
             // Create damage numbers appear after an enemy being damaged.
             //Instantiate(damageIndicator, enemy.transform.position, Quaternion.Euler(Vector3.zero)).GetComponent<NumberIndicator>().number = (int)(damage * 100);
+            Instantiate(bulletParticles, enemy.transform.position, Quaternion.Euler(Vector3.zero));
         }
 
         Destroy(gameObject);
