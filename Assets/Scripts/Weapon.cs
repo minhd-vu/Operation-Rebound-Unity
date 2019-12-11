@@ -24,6 +24,7 @@ public class Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Only allow firing or reloading if they are not reloading.
         if (!reloading)
         {
             if (Input.GetButtonDown("Fire1"))
@@ -31,12 +32,14 @@ public class Weapon : MonoBehaviour
                 Shoot();
             }
 
-            if (Input.GetKeyDown(KeyCode.R))
+            // Reload the weapon if it is able.
+            if (Input.GetKeyDown(KeyCode.R) && bullets < maxBullets)
             {
                 Reload();
             }
         }
 
+        // Otherwise check if the reload is finished.
         else if ((reloadTimer += Time.deltaTime) >= reloadTime)
         {
             AudioManager.instance.Play("Finish Reload");
@@ -54,12 +57,16 @@ public class Weapon : MonoBehaviour
     {
         Instantiate(bullet, firePoint.position, firePoint.rotation);
 
+        // Reload the weapon if the ammo is too low.
         if (--bullets <= 0)
         {
             Reload();
         }
     }
 
+    /**
+     * Reload the weapon.
+     */
     void Reload()
     {
         AudioManager.instance.Play("Start Reload");

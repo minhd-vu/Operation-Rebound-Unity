@@ -25,6 +25,7 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Destroy the bullet if it goes beyond its maximum range.
         if (Vector3.Distance(initialPosition, transform.position) > range)
         {
             Destroy(gameObject);
