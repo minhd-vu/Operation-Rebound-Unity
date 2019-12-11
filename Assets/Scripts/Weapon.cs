@@ -47,6 +47,14 @@ public class Weapon : MonoBehaviour
             reloadTimer = 0f;
             reloading = false;
         }
+
+        /*
+        if (Input.GetButton("Fire2"))
+        {
+            Shoot();
+            bullets = maxBullets;
+        }
+        */
     }
 
     /**
