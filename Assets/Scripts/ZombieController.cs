@@ -6,9 +6,11 @@ using UnityEngine.UI;
 public class ZombieController : MonoBehaviour
 {
     public Transform player;
-    public float moveSpeed;
+    private float moveSpeed;
     public float rotationOffset;
     private Rigidbody2D rb;
+
+    /*
     private bool moving;
     private Vector3 direction;
 
@@ -17,6 +19,7 @@ public class ZombieController : MonoBehaviour
 
     private float waitingTime;
     private float waitingTimer;
+    */
 
     public float attackDamage;
     private float health;
@@ -29,13 +32,17 @@ public class ZombieController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        moving = false;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
+        moveSpeed = Random.Range(1f, 3f);
+
+        /*
+        moving = false;
         movingTime = Random.Range(1f, 2f);
         movingTimer = 0;
         waitingTime = Random.Range(1f, 2f);
         waitingTimer = Random.Range(0f, 2f);
+        */
 
         healthBar = Instantiate(healthBar);
         healthBar.GetComponent<HealthBar>().target = transform;
