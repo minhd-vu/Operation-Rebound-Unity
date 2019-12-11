@@ -57,12 +57,14 @@ public class ZombieController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        // Movement is now obsolete due to A* pathfinding.
+
         // Move the zombie towards the player.
-        rb.velocity = (player.transform.position - rb.transform.position).normalized * moveSpeed;
+        //rb.velocity = (player.transform.position - rb.transform.position).normalized * moveSpeed;
 
         // Rotate the zombie towards the player.
-        Quaternion targetr = Quaternion.AngleAxis(Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg + rotationOffset, Vector3.forward);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetr, rb.velocity.magnitude * moveSpeed * Time.fixedDeltaTime);
+        //Quaternion targetr = Quaternion.AngleAxis(Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg + rotationOffset, Vector3.forward);
+        //transform.rotation = Quaternion.Slerp(transform.rotation, targetr, rb.velocity.magnitude * moveSpeed * Time.fixedDeltaTime);
 
         // AI movement.
         /*
