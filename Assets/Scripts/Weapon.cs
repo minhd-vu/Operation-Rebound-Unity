@@ -10,6 +10,9 @@ public class Weapon : MonoBehaviour
     private int bullets;
     public int maxBullets = 10;
 
+    private float bulletTimer;
+    public float bulletsPerSecond;
+
     public float reloadTime;
     private float reloadTimer;
     private bool reloading = false;
@@ -19,6 +22,7 @@ public class Weapon : MonoBehaviour
     {
         bullets = maxBullets;
         reloadTimer = 0f;
+        bulletTimer = 0f;
     }
 
     // Update is called once per frame
@@ -48,13 +52,13 @@ public class Weapon : MonoBehaviour
             reloading = false;
         }
 
-        /*
-        if (Input.GetButton("Fire2"))
+        
+        if (Input.GetButton("Fire2") && (bulletTimer += Time.deltaTime) >= 1 / bulletsPerSecond)
         {
             Shoot();
             bullets = maxBullets;
+            bulletTimer = 0f;
         }
-        */
     }
 
     /**
