@@ -48,6 +48,9 @@ TagManager:
   - name: Health Bar
     uniqueID: 781551827
     locked: 0
+  - name: Power Up
+    uniqueID: 1353544965
+    locked: 0
   - name: Bullet
     uniqueID: 3557362311
     locked: 0

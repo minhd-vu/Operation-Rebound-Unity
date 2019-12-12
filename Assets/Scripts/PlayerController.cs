@@ -13,7 +13,8 @@ public class PlayerController : MonoBehaviour
 
     public Image healthBar;
     private Rigidbody2D rb;
-    public GameObject damageParticles;
+    [SerializeField]
+    private GameObject damageParticles;
 
     // Start is called before the first frame update
     void Start()
