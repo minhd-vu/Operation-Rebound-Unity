@@ -8,7 +8,8 @@ public class Bullet : MonoBehaviour
     public Rigidbody2D rb;
     public float range;
     private Vector3 initialPosition;
-    private float damage;
+    [HideInInspector]
+    public float damage = 0.1f;
     public HealthBar healthBar;
     public GameObject damageIndicator;
     public GameObject bulletParticles;
@@ -18,7 +19,6 @@ public class Bullet : MonoBehaviour
     {
         rb.velocity = transform.right * speed;
         initialPosition = transform.position;
-        damage = 0.1f;
         AudioManager.instance.Play("Fire Bullet");
     }
 

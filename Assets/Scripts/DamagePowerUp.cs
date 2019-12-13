@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class DamagePowerUp : MonoBehaviour
 {
+    [SerializeField]
+    private float duration;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,8 +26,19 @@ public class DamagePowerUp : MonoBehaviour
     {
         if (collision.gameObject.name.Equals("Player"))
         {
-            PlayerController player = collision.gameObject.GetComponent<PlayerController>();
+            Debug.Log("PowerUpCollision");
+            StartCoroutine(PlayerDamagePowerUp(collision.gameObject.GetComponent<Weapon>().bullet.GetComponent<Bullet>(), duration));
+            Destroy(gameObject);
         }
     }
 
+    IEnumerator PlayerDamagePowerUp(Bullet bullet, float time)
+    {
+        Debug.Log("Damage Start");
+        float damage = bullet.damage;
+        bullet.damage = 1.0f;
+        yield return new WaitForSeconds(time);
+        Debug.Log("Damage Finish");
+        bullet.damage = damage;
+    }
 }
