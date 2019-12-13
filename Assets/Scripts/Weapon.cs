@@ -17,6 +17,8 @@ public class Weapon : MonoBehaviour
     private float reloadTimer;
     private bool reloading = false;
 
+    public float damage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -67,7 +69,7 @@ public class Weapon : MonoBehaviour
      */
     void Shoot()
     {
-        Instantiate(bullet, firePoint.position, firePoint.rotation);
+        Instantiate(bullet, firePoint.position, firePoint.rotation).GetComponent<Bullet>().damage = damage;
 
         // Reload the weapon if the ammo is too low.
         if (--bullets <= 0)

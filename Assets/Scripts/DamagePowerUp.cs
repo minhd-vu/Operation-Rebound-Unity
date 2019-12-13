@@ -27,18 +27,16 @@ public class DamagePowerUp : MonoBehaviour
         if (collision.gameObject.name.Equals("Player"))
         {
             Debug.Log("PowerUpCollision");
-            StartCoroutine(PlayerDamagePowerUp(collision.gameObject.GetComponent<Weapon>().bullet.GetComponent<Bullet>(), duration));
+            StartCoroutine(PlayerDamagePowerUp(collision.gameObject.GetComponent<Weapon>(), duration));
             Destroy(gameObject);
         }
     }
 
-    IEnumerator PlayerDamagePowerUp(Bullet bullet, float time)
+    IEnumerator PlayerDamagePowerUp(Weapon weapon, float time)
     {
-        Debug.Log("Damage Start");
-        float damage = bullet.damage;
-        bullet.damage = 1.0f;
+        float damage = weapon.damage;
+        weapon.damage = 1f;
         yield return new WaitForSeconds(time);
-        Debug.Log("Damage Finish");
-        bullet.damage = damage;
+        weapon.damage = 0.1f;
     }
 }

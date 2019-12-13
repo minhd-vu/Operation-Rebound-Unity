@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour
     public float range;
     private Vector3 initialPosition;
     [HideInInspector]
-    public float damage = 0.1f;
+    public float damage;
     public HealthBar healthBar;
     public GameObject damageIndicator;
     public GameObject bulletParticles;
