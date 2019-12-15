@@ -38,5 +38,6 @@ public class DamagePowerUp : MonoBehaviour
         weapon.damage = 1f;
         yield return new WaitForSeconds(time);
         weapon.damage = 0.1f;
+        Debug.Log(weapon.damage + "before");
     }
 }
