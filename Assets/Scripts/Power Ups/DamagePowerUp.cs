@@ -2,25 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamagePowerUp : MonoBehaviour
+public class DamagePowerUp : PowerUp
 {
-    [SerializeField]
-    private float duration;
-
-    // public GameObject pickupEffect;
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            StartCoroutine(PickUp(collision));
-        }
-    }
-
-    /**
-     * Allow the player to be able to instantly defeat enemies for a period of time.
-     */
-    IEnumerator PickUp(Collider2D player)
+    protected override IEnumerator PickUp(Collider2D player)
     {
         Weapon weapon = player.GetComponent<Weapon>();
         float previousDamage = weapon.damage;
@@ -28,7 +12,6 @@ public class DamagePowerUp : MonoBehaviour
 
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<Collider2D>().enabled = false;
-
         yield return new WaitForSeconds(duration);
 
         weapon.damage = previousDamage;
