@@ -86,4 +86,13 @@ public class Weapon : MonoBehaviour
         AudioManager.instance.Play("Start Reload");
         reloading = true;
     }
+
+    public IEnumerator PowerUp(float time)
+    {
+        float previousDamage = damage;
+        damage = 1f;
+        yield return new WaitForSeconds(time);
+        damage = previousDamage;
+        Debug.Log(damage + " Damage");
+    }
 }

@@ -7,37 +7,26 @@ public class DamagePowerUp : MonoBehaviour
     [SerializeField]
     private float duration;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     /**
      * If the player collides with the power up, give the player a damage boost.
-     */
+     
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.name.Equals("Player"))
         {
-            Debug.Log("PowerUpCollision");
-            StartCoroutine(PlayerDamagePowerUp(collision.gameObject.GetComponent<Weapon>(), duration));
+            Debug.Log("PowerUpCollision" + duration);
+            Weapon weapon = collision.gameObject.GetComponent<Weapon>();
+            collision.gameObject.GetComponent<Weapon>().StartCoroutine(PowerUp(duration));
             Destroy(gameObject);
         }
     }
+    */
 
-    IEnumerator PlayerDamagePowerUp(Weapon weapon, float time)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        float damage = weapon.damage;
-        weapon.damage = 1f;
-        yield return new WaitForSeconds(time);
-        weapon.damage = 0.1f;
-        Debug.Log(weapon.damage + "before");
+        if (collision.CompareTag("Player"))
+        {
+            Debug.Log("PowerUp Picked Up");
+        }
     }
 }
