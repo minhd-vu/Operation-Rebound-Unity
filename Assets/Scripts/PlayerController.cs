@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    private float moveSpeed;
+    public float moveSpeed;
     [SerializeField]
     private float rotateSpeed;
     private Rigidbody2D rb;
