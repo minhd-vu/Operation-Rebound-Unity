@@ -19,8 +19,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    [SerializeField]
-    private float maxHealth;
+    public float maxHealth;
     public float healthPerSecond;
     private float regenTimer;
     [SerializeField]
