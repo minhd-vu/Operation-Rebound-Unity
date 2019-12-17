@@ -7,9 +7,12 @@ using UnityEngine;
  */
 public class TargetFocusCamera : MonoBehaviour
 {
-    public Transform target;
-    public Vector3 offset;
-    public float smoothTime;
+    [SerializeField]
+    private Transform target;
+    [SerializeField]
+    private Vector3 offset;
+    [SerializeField]
+    private float smoothTime;
     private Vector3 velocity;
 
     // Update is called once per frame

@@ -39,6 +39,7 @@ public class Bullet : MonoBehaviour
      * Upon colliding with an enemy:
      * Damage the enemy,
      * Destroy the bullet,
+     * Display the blood splatter
      */
     void OnCollisionEnter2D(Collision2D collision)
     {

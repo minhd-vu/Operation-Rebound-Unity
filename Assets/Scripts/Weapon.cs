@@ -9,15 +9,19 @@ public class Weapon : MonoBehaviour
     public GameObject bullet;
 
     private int bullets;
-    public int maxBullets = 10;
+    [SerializeField]
+    private int maxBullets = 10;
 
     private float bulletTimer;
-    public float bulletsPerSecond;
+    [SerializeField]
+    private float bulletsPerSecond;
 
-    public float reloadTime;
+    [SerializeField]
+    private float reloadTime;
     private float reloadTimer;
-    private bool reloading = false;
+    private bool reloading;
 
+    [SerializeField]
     public float damage;
 
     // Start is called before the first frame update
@@ -26,6 +30,7 @@ public class Weapon : MonoBehaviour
         bullets = maxBullets;
         reloadTimer = 0f;
         bulletTimer = 0f;
+        reloading = false;
     }
 
     // Update is called once per frame

@@ -5,7 +5,7 @@ using UnityEngine;
 public class HealthPowerUp : PowerUp
 {
     [SerializeField]
-    private float healthRegenMultiplier;
+    private float multiplier;
     protected override IEnumerator PickUp(Collider2D collider)
     {
         Player player = collider.GetComponent<Player>();

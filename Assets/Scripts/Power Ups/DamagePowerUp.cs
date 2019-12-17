@@ -7,9 +7,9 @@ public class DamagePowerUp : PowerUp
     [SerializeField]
     private float damage;
 
-    protected override IEnumerator PickUp(Collider2D player)
+    protected override IEnumerator PickUp(Collider2D collider)
     {
-        Weapon weapon = player.GetComponent<Weapon>();
+        Weapon weapon = collider.GetComponent<Weapon>();
         float previousDamage = weapon.damage;
         weapon.damage = damage;
 

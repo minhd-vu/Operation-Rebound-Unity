@@ -6,8 +6,10 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed;
-    public float rotateSpeed;
+    [SerializeField]
+    private float moveSpeed;
+    [SerializeField]
+    private float rotateSpeed;
     private Rigidbody2D rb;
 
     // Start is called before the first frame update
@@ -37,7 +39,7 @@ public class PlayerController : MonoBehaviour
          * Rotate the player towards the mouse cursor.
          * Find the direction vector.
          * Find the angle and convert it into degrees.
-         * Slerp the value for a smooth rotation.
+         * Slerp the value for a smooth rotation (removed).
          **/
         Vector3 dir = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
