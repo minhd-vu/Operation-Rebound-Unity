@@ -11,10 +11,12 @@ public class PowerUpSpawner : MonoBehaviour
     private float spawnTime;
     [SerializeField]
     private Tilemap tileMap;
+    [SerializeField]
+    private Tilemap collisionMap;
     private List<Vector3> spawnLocations;
     private bool spawning;
 
-    private void Start()
+    void Start()
     {
         spawnLocations = new List<Vector3>();
 
@@ -24,9 +26,10 @@ public class PowerUpSpawner : MonoBehaviour
             {
                 Vector3Int localPlace = new Vector3Int(i, j, 0);
                 Vector3 place = tileMap.CellToWorld(localPlace);
-                if (!tileMap.HasTile(localPlace))
+                if (tileMap.HasTile(localPlace) && !collisionMap.HasTile(collisionMap.WorldToCell(place)))
                 {
-                    spawnLocations.Add(new Vector3(place.x + tileMap.cellSize.x / 2, place.y + tileMap.cellSize.y / 2, place.z));
+                    tileMap.localBounds.Contains(place);
+                    spawnLocations.Add(new Vector3(place.x + tileMap.cellSize.x / 2, place.y + tileMap.cellSize.y / 2, 0));
                 }
             }
         }

@@ -10319,7 +10319,8 @@ MonoBehaviour:
   - {fileID: 5127796829239114530, guid: e9fb5626b8c3dbc468858e064e97af2a, type: 3}
   - {fileID: 5127796829239114530, guid: 0e0eb3bb354969a429265cedea63b3eb, type: 3}
   spawnTime: 1
-  tileMap: {fileID: 1358708071}
+  collisionMap: {fileID: 1358708071}
+  tileMap: {fileID: 946796108}
 --- !u!4 &1875258037
 Transform:
   m_ObjectHideFlags: 0
