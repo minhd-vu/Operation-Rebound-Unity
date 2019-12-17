@@ -4,8 +4,25 @@ using UnityEngine;
 
 public class InfinityPowerUp : PowerUp
 {
-    protected override IEnumerator PickUp(Collider2D player)
+    [SerializeField]
+    private float multiplier;
+    protected override IEnumerator PickUp(Collider2D collider)
     {
-        throw new System.NotImplementedException();
+        Weapon weapon = collider.GetComponent<Weapon>();
+        float previousBulletsPerSecond = weapon.bulletsPerSecond;
+        int previousMaxBullets = weapon.maxBullets;
+        weapon.bulletsPerSecond *= multiplier;
+        weapon.maxBullets = (int)(weapon.bulletsPerSecond * duration);
+        weapon.bullets = weapon.maxBullets;
+
+        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<Collider2D>().enabled = false;
+        yield return new WaitForSeconds(duration);
+
+        weapon.bulletsPerSecond = previousBulletsPerSecond;
+        weapon.maxBullets = previousMaxBullets;
+        weapon.bullets = weapon.maxBullets;
+
+        Destroy(gameObject);
     }
 }

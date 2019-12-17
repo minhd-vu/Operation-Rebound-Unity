@@ -121,3 +121,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 5
+  multiplier: 1.5

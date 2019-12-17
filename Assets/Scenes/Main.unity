@@ -10523,7 +10523,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  rotateSpeed: 7
 --- !u!114 &1803523737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10538,6 +10537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 560733256}
   bullet: {fileID: 4642350767651844583, guid: d321ae8ac31d6c24cada09e5a3b8823f, type: 3}
+  bullets: 0
   maxBullets: 10
   bulletsPerSecond: 10
   reloadTime: 0.68

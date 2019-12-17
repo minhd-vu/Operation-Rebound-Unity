@@ -10,13 +10,12 @@ public class Weapon : MonoBehaviour
     [SerializeField]
     private GameObject bullet;
 
-    private int bullets;
-    [SerializeField]
-    private int maxBullets = 10;
+    [HideInInspector]
+    public int bullets;
+    public int maxBullets;
 
     private float bulletTimer;
-    [SerializeField]
-    private float bulletsPerSecond;
+    public float bulletsPerSecond;
 
     [SerializeField]
     private float reloadTime;
