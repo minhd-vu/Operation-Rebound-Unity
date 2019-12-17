@@ -4,20 +4,23 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float speed;
-    public Rigidbody2D rb;
-    public float range;
+    [SerializeField]
+    private float speed;
+    [SerializeField]
+    private float range;
+
     private Vector3 initialPosition;
     [HideInInspector]
     public float damage;
-    public HealthBar healthBar;
-    public GameObject damageIndicator;
-    public GameObject bulletParticles;
+
+    //public GameObject damageIndicator;
+    [SerializeField]
+    private GameObject bulletParticles;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb.velocity = transform.right * speed;
+        GetComponent<Rigidbody2D>().velocity = transform.right * speed;
         initialPosition = transform.position;
         AudioManager.instance.Play("Fire Bullet");
     }
@@ -39,8 +42,8 @@ public class Bullet : MonoBehaviour
      */
     void OnCollisionEnter2D(Collision2D collision)
     {
-        ZombieController enemy;
-        if ((enemy = collision.gameObject.GetComponent<ZombieController>()) != null)
+        Zombie enemy;
+        if ((enemy = collision.gameObject.GetComponent<Zombie>()) != null)
         {
             // Damage the enemy.
             enemy.damage(damage);

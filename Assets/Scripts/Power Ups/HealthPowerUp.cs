@@ -6,11 +6,9 @@ public class HealthPowerUp : PowerUp
 {
     [SerializeField]
     private float healthRegenMultiplier;
-    protected override IEnumerator PickUp(Collider2D player)
+    protected override IEnumerator PickUp(Collider2D collider)
     {
-        PlayerController playerController = player.GetComponent<PlayerController>();
-        float previousHealthRegenMultiplier = 0.0f;
-        playerController.healthBar;
+        Player player = collider.GetComponent<Player>();
 
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<Collider2D>().enabled = false;

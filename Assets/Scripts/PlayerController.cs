@@ -8,18 +8,11 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
     public float rotateSpeed;
-
-    private float health;
-
-    public Image healthBar;
     private Rigidbody2D rb;
-    [SerializeField]
-    private GameObject damageParticles;
 
     // Start is called before the first frame update
     void Start()
     {
-        health = 1f;
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -50,17 +43,5 @@ public class PlayerController : MonoBehaviour
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.AngleAxis(angle, Vector3.forward), dir.normalized.magnitude * rotateSpeed * Time.deltaTime);
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-
-        // Update the health bar.
-        healthBar.fillAmount = health;
-    }
-
-    /**
-     * Deal damage to the player
-     */
-    public void damage(float damage)
-    {
-        health -= damage;
-        Instantiate(damageParticles, transform);
     }
 }

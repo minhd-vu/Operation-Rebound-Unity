@@ -8,13 +8,13 @@ public abstract class PowerUp : MonoBehaviour
     [SerializeField]
     protected float duration;
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collision.CompareTag("Player"))
+        if (collider.CompareTag("Player"))
         {
-            StartCoroutine(PickUp(collision));
+            StartCoroutine(PickUp(collider));
         }
     }
 
-    protected abstract IEnumerator PickUp(Collider2D player);
+    protected abstract IEnumerator PickUp(Collider2D collider);
 }
