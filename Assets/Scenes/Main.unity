@@ -10601,6 +10601,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fbdd02b4dbf6fd46b131f9d8b4d9d22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 1
+  healthPerSecond: 0.01
+  regenTime: 1
   healthBar: {fileID: 997071903}
   damageParticles: {fileID: 7886777790140101917, guid: d8ae350e6dcef7448a82732be28bc15a,
     type: 3}
