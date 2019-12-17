@@ -5,26 +5,28 @@ using UnityEngine.Tilemaps;
 
 public class PowerUpSpawner : MonoBehaviour
 {
-    public GameObject[] powerUps;
-    public float spawnTime = 0.5f;
-    public Tilemap tileMap;
-    public Tilemap collisionTileMap;
-    private List<Vector3> availablePlaces;
+    [SerializeField]
+    private GameObject[] powerUps;
+    [SerializeField]
+    private float spawnTime;
+    [SerializeField]
+    private Tilemap tileMap;
+    private List<Vector3> spawnLocations;
     private bool spawning;
 
     private void Start()
     {
-        availablePlaces = new List<Vector3>();
+        spawnLocations = new List<Vector3>();
 
-        for (int n = tileMap.cellBounds.xMin; n < tileMap.cellBounds.xMax; n++)
+        for (int i = tileMap.cellBounds.xMin; i < tileMap.cellBounds.xMax; i++)
         {
-            for (int p = tileMap.cellBounds.yMin; p < tileMap.cellBounds.yMax; p++)
+            for (int j = tileMap.cellBounds.yMin; j < tileMap.cellBounds.yMax; j++)
             {
-                Vector3Int localPlace = new Vector3Int(n, p, (int)tileMap.transform.position.y);
+                Vector3Int localPlace = new Vector3Int(i, j, 0);
                 Vector3 place = tileMap.CellToWorld(localPlace);
-                if (tileMap.HasTile(localPlace))
+                if (!tileMap.HasTile(localPlace))
                 {
-                    availablePlaces.Add(place);
+                    spawnLocations.Add(new Vector3(place.x + tileMap.cellSize.x / 2, place.y + tileMap.cellSize.y / 2, place.z));
                 }
             }
         }
@@ -38,7 +40,7 @@ public class PowerUpSpawner : MonoBehaviour
         while (spawning)
         {
             yield return new WaitForSeconds(spawnTime);
-            Instantiate(powerUps[Random.Range(0, powerUps.Length)], availablePlaces[Random.Range(0, availablePlaces.Count)], Quaternion.identity);
+            Instantiate(powerUps[Random.Range(0, powerUps.Length)], spawnLocations[Random.Range(0, spawnLocations.Count)], Quaternion.identity);
         }
     }
 }
