@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    public Transform firePoint;
-    public GameObject bullet;
+    [SerializeField]
+    private Transform firePoint;
+    [SerializeField]
+    private GameObject bullet;
 
     private int bullets;
     [SerializeField]
@@ -39,7 +41,8 @@ public class Weapon : MonoBehaviour
         // Only allow firing or reloading if they are not reloading.
         if (!reloading)
         {
-            if (Input.GetButtonDown("Fire1"))
+            // Allows firing when button is held down (for user experience).
+            if (Input.GetButton("Fire1") && (bulletTimer += Time.deltaTime) >= 1f / bulletsPerSecond)
             {
                 Shoot();
             }
@@ -59,14 +62,6 @@ public class Weapon : MonoBehaviour
             reloadTimer = 0f;
             reloading = false;
         }
-
-        
-        if (Input.GetButton("Fire2") && (bulletTimer += Time.deltaTime) >= 1 / bulletsPerSecond)
-        {
-            Shoot();
-            bullets = maxBullets;
-            bulletTimer = 0f;
-        }
     }
 
     /**
@@ -76,6 +71,7 @@ public class Weapon : MonoBehaviour
     void Shoot()
     {
         Instantiate(bullet, firePoint.position, firePoint.rotation).GetComponent<Bullet>().damage = damage;
+        bulletTimer = 0f;
 
         // Reload the weapon if the ammo is too low.
         if (--bullets <= 0)

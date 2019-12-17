@@ -8,8 +8,8 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     public float moveSpeed;
-    [SerializeField]
-    private float rotateSpeed;
+    //[SerializeField]
+    //private float rotateSpeed;
     private Rigidbody2D rb;
 
     // Start is called before the first frame update
