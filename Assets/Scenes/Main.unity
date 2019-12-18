@@ -11217,7 +11217,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 45
   m_PointLightOuterAngle: 45
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 13.23
+  m_PointLightOuterRadius: 10
   m_PointLightDistance: 12.1
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -11912,7 +11912,7 @@ MonoBehaviour:
   bullet: {fileID: 4642350767651844583, guid: d321ae8ac31d6c24cada09e5a3b8823f, type: 3}
   bullets: 0
   maxBullets: 10
-  bulletsPerSecond: 10
+  bulletsPerSecond: 7
   bulletsPerSecondBonus: 0
   reloadTime: 0.68
   damage: 0.1
