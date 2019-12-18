@@ -35,6 +35,8 @@ public class Leaderboard : MonoBehaviour
         {
             CreateLeaderboardEntry(leaderboards.entries[i], entryContainer, leaderboardEntryTransforms);
         }
+
+        gameObject.SetActive(false);
     }
 
     private void ResetLeaderboard()
