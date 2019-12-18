@@ -10,10 +10,15 @@ public class TargetFocusCamera : MonoBehaviour
     [SerializeField]
     private Transform target;
     [SerializeField]
-    private Vector3 offset;
+    private float offset;
     [SerializeField]
     private float smoothTime;
     private Vector3 velocity;
+
+    private void Start()
+    {
+        offset = transform.position.z;
+    }
 
     // Update is called once per frame
     void LateUpdate()
@@ -23,8 +28,8 @@ public class TargetFocusCamera : MonoBehaviour
         bounds.Encapsulate(target.position);
         bounds.Encapsulate(mousePosition);
 
-        Vector3 smooth = Vector3.SmoothDamp(transform.position, bounds.center + offset, ref velocity, smoothTime);
-        smooth.z = -10f;
+        Vector3 smooth = Vector3.SmoothDamp(transform.position, bounds.center, ref velocity, smoothTime);
+        smooth.z = offset;
         transform.position = smooth;
         velocity.z = 0;
     }
