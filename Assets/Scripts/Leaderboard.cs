@@ -27,10 +27,16 @@ public class Leaderboard : MonoBehaviour
         leaderboards.entries.Sort();
 
         leaderboardEntryTransforms = new List<Transform>();
-        foreach (LeaderboardEntry entry in leaderboards.entries)
+
+        for (int i = 0; i < (leaderboards.entries.Count > 10 ? 10 : leaderboards.entries.Count); ++i)
         {
-            CreateLeaderboardEntry(entry, entryContainer, leaderboardEntryTransforms);
+            CreateLeaderboardEntry(leaderboards.entries[i], entryContainer, leaderboardEntryTransforms);
         }
+
+        //foreach (LeaderboardEntry entry in leaderboards.entries)
+        //{
+        //    CreateLeaderboardEntry(entry, entryContainer, leaderboardEntryTransforms);
+        //}
 
         // Used for resetting the leaderboard.
         //string json = JsonUtility.ToJson(leaderboards);
