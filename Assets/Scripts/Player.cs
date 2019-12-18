@@ -18,7 +18,6 @@ public class Player : MonoBehaviour
             }
         }
     }
-
     public float maxHealth;
     [SerializeField]
     private float healthPerSecond;
@@ -32,12 +31,16 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject damageParticles;
 
+    [HideInInspector]
+    public int score;
+
     // Start is called before the first frame update
     void Start()
     {
         health = maxHealth;
         regenTimer = 0f;
         healthPerSecondBonus = 0f;
+        score = 0;
     }
 
     // Update is called once per frame

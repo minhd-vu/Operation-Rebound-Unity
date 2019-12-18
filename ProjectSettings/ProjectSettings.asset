@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: Minh Vu
   productName: Operation Rebound
-  defaultCursor: {fileID: 2800000, guid: 08cae4c3cbefd8a4fa6a9ebfd18f9feb, type: 3}
+  defaultCursor: {fileID: 2800000, guid: 2f6422e2a58a86f4db601760187fcbca, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
@@ -120,7 +120,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.1
+  bundleVersion: 0.23
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0

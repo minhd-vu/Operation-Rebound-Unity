@@ -729,7 +729,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22acf6449b9e6aa46931fca37dd87fc0, type: 3}
   m_Name: 
@@ -766,7 +766,7 @@ Camera:
   field of view: 60
   orthographic: 1
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -802,7 +802,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7851d39a8a7d875498c9f495306c6f71, type: 3}
   m_Name: 
@@ -8275,7 +8275,7 @@ GameObject:
   - component: {fileID: 1066379600}
   - component: {fileID: 1066379599}
   m_Layer: 0
-  m_Name: Enemy Spawner (1)
+  m_Name: Enemy Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10153,6 +10153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  moveSpeedBonus: 0
 --- !u!114 &1803523737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10170,8 +10171,10 @@ MonoBehaviour:
   bullets: 0
   maxBullets: 10
   bulletsPerSecond: 10
+  bulletsPerSecondBonus: 0
   reloadTime: 0.68
   damage: 0.1
+  damageBonus: 0
 --- !u!50 &1803523738
 Rigidbody2D:
   serializedVersion: 4
@@ -10233,10 +10236,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1
   healthPerSecond: 0.01
+  healthPerSecondBonus: 0
   regenTime: 1
   healthBar: {fileID: 997071903}
   damageParticles: {fileID: 7886777790140101917, guid: d8ae350e6dcef7448a82732be28bc15a,
     type: 3}
+  score: 0
 --- !u!1 &1823033643
 GameObject:
   m_ObjectHideFlags: 0
@@ -10248,7 +10253,7 @@ GameObject:
   - component: {fileID: 1823033645}
   - component: {fileID: 1823033644}
   m_Layer: 0
-  m_Name: Enemy Spawner (3)
+  m_Name: Enemy Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10318,9 +10323,9 @@ MonoBehaviour:
   - {fileID: 5127796829239114530, guid: faeddf9dca9a86944b9bf1b4baf12d4b, type: 3}
   - {fileID: 5127796829239114530, guid: e9fb5626b8c3dbc468858e064e97af2a, type: 3}
   - {fileID: 5127796829239114530, guid: 0e0eb3bb354969a429265cedea63b3eb, type: 3}
-  spawnTime: 1
-  collisionMap: {fileID: 1358708071}
+  spawnTime: 10
   tileMap: {fileID: 946796108}
+  collisionMap: {fileID: 1358708071}
 --- !u!4 &1875258037
 Transform:
   m_ObjectHideFlags: 0
@@ -10545,7 +10550,7 @@ GameObject:
   - component: {fileID: 1966912148}
   - component: {fileID: 1966912147}
   m_Layer: 0
-  m_Name: Enemy Spawner (2)
+  m_Name: Enemy Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

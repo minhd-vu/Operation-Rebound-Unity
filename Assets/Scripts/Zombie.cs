@@ -70,6 +70,7 @@ public class Zombie : MonoBehaviour
         if (health <= 0)
         {
             AudioManager.instance.Play("Enemy Death");
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().score++;
             Destroy(gameObject);
             Destroy(healthBar);
         }
