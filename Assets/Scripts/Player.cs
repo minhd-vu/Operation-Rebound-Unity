@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
@@ -37,6 +36,8 @@ public class Player : MonoBehaviour
 
     [HideInInspector]
     public int score;
+    [SerializeField]
+    private TextMeshProUGUI scoreText;
 
     // Start is called before the first frame update
     void Start()
@@ -58,6 +59,8 @@ public class Player : MonoBehaviour
 
         // Update the health bar.
         healthBar.fillAmount = health;
+
+        scoreText.text = "Score: " + score;
     }
 
     /**

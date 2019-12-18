@@ -9,10 +9,9 @@ public class GameManager : MonoBehaviour
     {
         if (!ended)
         {
+            ended = true;
             Restart();
         }
-
-        ended = true;
     }
 
     void Restart()
