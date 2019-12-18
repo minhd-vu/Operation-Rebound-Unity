@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     //private float rotateSpeed;
     private Rigidbody2D rb;
     private Vector2 input;
-    private Vector3 direction;
+    private Vector2 mousePosition;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        direction = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
     private void FixedUpdate()
@@ -52,8 +52,9 @@ public class PlayerController : MonoBehaviour
          * Find the angle and convert it into degrees.
          * Slerp the value for a smooth rotation (removed).
          **/
+        Vector2 direction = mousePosition - rb.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.AngleAxis(angle, Vector3.forward), dir.normalized.magnitude * rotationSpeed * Time.deltaTime);
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        rb.rotation = angle;
     }
 }

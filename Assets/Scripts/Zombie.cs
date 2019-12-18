@@ -28,7 +28,7 @@ public class Zombie : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         // Update the health bar.
         if (healthBar.activeSelf)
