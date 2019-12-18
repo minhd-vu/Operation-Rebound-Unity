@@ -121,4 +121,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 5
+  particles: {fileID: 7886777790140101917, guid: acd33427e553e214bb2c2d9875ba4731,
+    type: 3}
   moveSpeed: 2
