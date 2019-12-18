@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public class Weapon : MonoBehaviour
 {
@@ -77,6 +78,7 @@ public class Weapon : MonoBehaviour
     void Shoot()
     {
         Instantiate(bullet, firePoint.position, firePoint.rotation).GetComponent<Bullet>().damage = damage + damageBonus;
+        CameraShaker.Instance.ShakeOnce(1f, 2f, 0.1f, 0.2f);
         bulletTimer = 0f;
 
         // Reload the weapon if the ammo is too low.

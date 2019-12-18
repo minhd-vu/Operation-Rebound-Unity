@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
         //transform.Translate(Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime, Input.GetAxisRaw("Vertical") * speed * Time.deltaTime, 0, Space.World);
         //rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime, Input.GetAxisRaw("Vertical") * speed * Time.deltaTime);
         rb.velocity = new Vector2(input.x * speed, input.y * speed);
-        //rb.AddForce(new Vector2(Input.GetAxisRaw("Horizontal") * speed, Input.GetAxisRaw("Vertical") * speed));
+        //rb.AddForce(new Vector2(input.x * speed, input.y * speed));
 
         /**
          * Rotate the player towards the mouse cursor.
