@@ -18,11 +18,14 @@ public class Leaderboard : MonoBehaviour
         entryTemplate.gameObject.SetActive(false);
 
         string jsonString = PlayerPrefs.GetString("Leaderboards");
-        Leaderboards leaderboards = JsonUtility.FromJson<Leaderboards>(jsonString);
 
-        // Used for resetting the leaderboard.
-        //Leaderboards leaderboards = new Leaderboards() { entries = new List<LeaderboardEntry>() };
-        //leaderboards.entries.Add(new LeaderboardEntry() { score = -1, name = "Minh" });
+        if (jsonString.Equals(""))
+        {
+            ResetLeaderboard();
+            jsonString = PlayerPrefs.GetString("Leaderboards");
+        }
+
+        Leaderboards leaderboards = JsonUtility.FromJson<Leaderboards>(jsonString);
 
         leaderboards.entries.Sort();
 
@@ -32,17 +35,19 @@ public class Leaderboard : MonoBehaviour
         {
             CreateLeaderboardEntry(leaderboards.entries[i], entryContainer, leaderboardEntryTransforms);
         }
+    }
 
-        //foreach (LeaderboardEntry entry in leaderboards.entries)
-        //{
-        //    CreateLeaderboardEntry(entry, entryContainer, leaderboardEntryTransforms);
-        //}
+    private void ResetLeaderboard()
+    {
+        // Used for resetting the leaderboard.
+        Leaderboards leaderboards = new Leaderboards() { entries = new List<LeaderboardEntry>() };
+        leaderboards.entries.Add(new LeaderboardEntry() { score = -1, name = "Minh" });
 
         // Used for resetting the leaderboard.
-        //string json = JsonUtility.ToJson(leaderboards);
-        //PlayerPrefs.SetString("Leaderboards", json);
-        //PlayerPrefs.Save();
-        //Debug.Log(PlayerPrefs.GetString("Leaderboards"));
+        string json = JsonUtility.ToJson(leaderboards);
+        PlayerPrefs.SetString("Leaderboards", json);
+        PlayerPrefs.Save();
+        Debug.Log(PlayerPrefs.GetString("Leaderboards"));
     }
 
     private void CreateLeaderboardEntry(LeaderboardEntry entry, Transform container, List<Transform> transforms)
