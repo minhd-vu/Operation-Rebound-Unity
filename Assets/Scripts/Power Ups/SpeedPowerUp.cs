@@ -5,19 +5,18 @@ using UnityEngine;
 public class SpeedPowerUp : PowerUp
 {
     [SerializeField]
-    private float multiplier;
+    private float moveSpeed;
 
     protected override IEnumerator PickUp(Collider2D player)
     {
         PlayerController playerController = player.GetComponent<PlayerController>();
-        float previousSpeed = playerController.moveSpeed;
-        playerController.moveSpeed *= multiplier;
+        playerController.moveSpeedBonus = moveSpeed;
 
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<Collider2D>().enabled = false;
         yield return new WaitForSeconds(duration);
 
-        playerController.moveSpeed = previousSpeed;
+        playerController.moveSpeedBonus = 0f;
 
         Destroy(gameObject);
     }

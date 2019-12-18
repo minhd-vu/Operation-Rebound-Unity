@@ -7,7 +7,9 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    public float moveSpeed;
+    private float moveSpeed;
+    [HideInInspector]
+    public float moveSpeedBonus;
     //[SerializeField]
     //private float rotateSpeed;
     private Rigidbody2D rb;
@@ -16,18 +18,19 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        moveSpeedBonus = 0f;
     }
 
     // Update is called once per frame
     void Update()
     {
         // Move the player based on the input.
-        float speed = moveSpeed;
+        float speed = moveSpeed + moveSpeedBonus;
 
         // Move the player slower when they are moving diagonally to maintain the same magnitude.
         if (Math.Abs(Input.GetAxisRaw("Horizontal")) > 0 && Math.Abs(Input.GetAxisRaw("Vertical")) > 0)
         {
-            speed = moveSpeed / Mathf.Sqrt(2);
+            speed /= Mathf.Sqrt(2);
         }
 
         //transform.Translate(Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime, Input.GetAxisRaw("Vertical") * speed * Time.deltaTime, 0, Space.World);

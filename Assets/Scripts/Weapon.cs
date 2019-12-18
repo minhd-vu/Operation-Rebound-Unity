@@ -15,7 +15,10 @@ public class Weapon : MonoBehaviour
     public int maxBullets;
 
     private float bulletTimer;
-    public float bulletsPerSecond;
+    [SerializeField]
+    private float bulletsPerSecond;
+    [HideInInspector]
+    public float bulletsPerSecondBonus;
 
     [SerializeField]
     private float reloadTime;
@@ -35,6 +38,7 @@ public class Weapon : MonoBehaviour
         bulletTimer = 0f;
         reloading = false;
         damageBonus = 0f;
+        bulletsPerSecondBonus = 0f;
     }
 
     // Update is called once per frame
