@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
             }
             else if (_health <= 0)
             {
-                FindObjectOfType<GameManager>().EndGame();
+                FindObjectOfType<GameManager>().EndGame(score);
             }
         }
     }

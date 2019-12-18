@@ -3,13 +3,24 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField]
+    private Leaderboard leaderboard;
     private bool ended = false;
 
-    public void EndGame()
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+
+        }
+    }
+
+    public void EndGame(int score)
     {
         if (!ended)
         {
             ended = true;
+            leaderboard.AddLeaderboardEntry(score, "You");
             Restart();
         }
     }
