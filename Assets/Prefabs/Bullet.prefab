@@ -145,5 +145,5 @@ MonoBehaviour:
   speed: 12
   range: 10
   damage: 0
-  bulletParticles: {fileID: 7886777790140101917, guid: d8ae350e6dcef7448a82732be28bc15a,
+  muzzleFlashLight: {fileID: 7403891906062648247, guid: 52d15a4902845ad49a2a36c18077b50a,
     type: 3}

@@ -15,13 +15,14 @@ public class Bullet : MonoBehaviour
 
     //public GameObject damageIndicator;
     [SerializeField]
-    private GameObject bulletParticles;
+    private GameObject muzzleFlashLight;
 
     // Start is called before the first frame update
     void Start()
     {
         GetComponent<Rigidbody2D>().velocity = transform.right * speed;
         initialPosition = transform.position;
+        Instantiate(muzzleFlashLight, initialPosition, transform.rotation);
         AudioManager.instance.Play("Fire Bullet");
     }
 
@@ -51,7 +52,6 @@ public class Bullet : MonoBehaviour
 
             // Create damage numbers appear after an enemy being damaged.
             //Instantiate(damageIndicator, enemy.transform.position, Quaternion.Euler(Vector3.zero)).GetComponent<NumberIndicator>().number = (int)(damage * 100);
-            Instantiate(bulletParticles, enemy.transform.position, Quaternion.Euler(Vector3.zero));
         }
 
         Destroy(gameObject);

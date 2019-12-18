@@ -14,6 +14,9 @@ public class Zombie : MonoBehaviour
     private float healthBarTime;
     private float healthBarTimer;
 
+    [SerializeField]
+    private GameObject damageParticles;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,6 +66,7 @@ public class Zombie : MonoBehaviour
      */
     public void damage(float damage)
     {
+        Instantiate(damageParticles, transform.position, Quaternion.Euler(Vector3.zero));
         health -= damage;
         healthBar.SetActive(true);
         healthBarTimer = 0f;

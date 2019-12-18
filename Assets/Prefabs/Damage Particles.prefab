@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7886777790140101916}
   - component: {fileID: 8858304536798945090}
   m_Layer: 0
-  m_Name: Bullet Particles
+  m_Name: Damage Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
