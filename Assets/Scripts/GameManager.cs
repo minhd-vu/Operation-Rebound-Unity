@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             leaderboard.gameObject.SetActive(!leaderboard.gameObject.activeSelf);
+            Time.timeScale = leaderboard.gameObject.activeSelf ? 0f : 1f;
         }
     }
 
