@@ -5,20 +5,20 @@ using UnityEngine;
 public class HealthPowerUp : PowerUp
 {
     [SerializeField]
-    private float multiplier;
+    private float healthPerSecond;
     protected override IEnumerator PickUp(Collider2D collider)
     {
         Player player = collider.GetComponent<Player>();
-        float previousHealthPerSecond = player.healthPerSecond;
-        player.healthPerSecond *= multiplier;
+        player.healthPerSecondBonus = healthPerSecond;
         player.health = player.maxHealth;
 
 
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<Collider2D>().enabled = false;
         yield return new WaitForSeconds(duration);
+        
 
-        player.healthPerSecond = previousHealthPerSecond;
+        player.healthPerSecondBonus = 0f;
 
         Destroy(gameObject);
     }

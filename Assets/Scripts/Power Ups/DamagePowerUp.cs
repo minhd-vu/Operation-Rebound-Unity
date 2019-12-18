@@ -6,18 +6,16 @@ public class DamagePowerUp : PowerUp
 {
     [SerializeField]
     private float damage;
-
     protected override IEnumerator PickUp(Collider2D collider)
     {
         Weapon weapon = collider.GetComponent<Weapon>();
-        float previousDamage = weapon.damage;
-        weapon.damage = damage;
+        weapon.damageBonus = damage;
 
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<Collider2D>().enabled = false;
         yield return new WaitForSeconds(duration);
 
-        weapon.damage = previousDamage;
+        weapon.damageBonus = 0f;
 
         Destroy(gameObject);
     }

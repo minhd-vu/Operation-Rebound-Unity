@@ -20,7 +20,10 @@ public class Player : MonoBehaviour
     }
 
     public float maxHealth;
-    public float healthPerSecond;
+    [SerializeField]
+    private float healthPerSecond;
+    [HideInInspector]
+    public float healthPerSecondBonus;
     private float regenTimer;
     [SerializeField]
     private float regenTime;
@@ -34,6 +37,7 @@ public class Player : MonoBehaviour
     {
         health = maxHealth;
         regenTimer = 0f;
+        healthPerSecondBonus = 0f;
     }
 
     // Update is called once per frame
@@ -41,7 +45,7 @@ public class Player : MonoBehaviour
     {
         if ((regenTimer += Time.deltaTime) >= regenTime)
         {
-            health += healthPerSecond;
+            health += healthPerSecond + healthPerSecondBonus;
             regenTimer = 0f;
         }
 

@@ -6,6 +6,7 @@ public class InfinityPowerUp : PowerUp
 {
     [SerializeField]
     private float multiplier;
+    private static float previousBulletsPerSecond;
     protected override IEnumerator PickUp(Collider2D collider)
     {
         Weapon weapon = collider.GetComponent<Weapon>();
