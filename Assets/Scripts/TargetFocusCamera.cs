@@ -23,7 +23,9 @@ public class TargetFocusCamera : MonoBehaviour
         bounds.Encapsulate(target.position);
         bounds.Encapsulate(mousePosition);
 
-        transform.position = Vector3.SmoothDamp(transform.position, bounds.center + offset, ref velocity, smoothTime);
+        Vector3 smooth = Vector3.SmoothDamp(transform.position, bounds.center + offset, ref velocity, smoothTime);
+        smooth.z = -10f;
+        transform.position = smooth;
         velocity.z = 0;
     }
 }
