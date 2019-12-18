@@ -16,6 +16,10 @@ public class Player : MonoBehaviour
             {
                 _health = maxHealth;
             }
+            else if (_health <= 0)
+            {
+                FindObjectOfType<GameManager>().EndGame();
+            }
         }
     }
     public float maxHealth;
@@ -62,6 +66,7 @@ public class Player : MonoBehaviour
     public void damage(float damage)
     {
         health -= damage;
+        Debug.Log(health);
         Instantiate(damageParticles, transform);
     }
 }
