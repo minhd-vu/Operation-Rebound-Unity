@@ -5,10 +5,13 @@ using Pathfinding;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject[] enemies;
+    [SerializeField]
+    private GameObject[] enemies;
     private float timer;
-    public float maxTime;
-    public float minTime;
+    [SerializeField]
+    private float maxTime;
+    [SerializeField]
+    private float minTime;
     private float time;
 
     // Start is called before the first frame update

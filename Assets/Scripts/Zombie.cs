@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Pathfinding;
 
 public class Zombie : MonoBehaviour
 {
     [SerializeField]
     private float attackDamage;
 
+    public float moveSpeed;
+
+    public float maxHealth;
     private float health;
     [SerializeField]
     private GameObject healthBar;
@@ -20,6 +24,7 @@ public class Zombie : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<AIPath>().maxSpeed = moveSpeed;
         healthBar = Instantiate(healthBar);
         healthBar.GetComponent<HealthBar>().target = transform;
         healthBar.SetActive(false);
@@ -27,7 +32,7 @@ public class Zombie : MonoBehaviour
         healthBarTime = 5f;
         healthBarTimer = 0f;
 
-        health = 1f;
+        health = maxHealth;
     }
 
     // Update is called once per frame
@@ -37,7 +42,7 @@ public class Zombie : MonoBehaviour
         if (healthBar.activeSelf)
         {
             // Update the visual values.
-            healthBar.GetComponent<HealthBar>().image.fillAmount = health;
+            healthBar.GetComponent<HealthBar>().image.fillAmount = health / maxHealth;
 
             // Make the healthbar disappear after a period of inactivity.
             healthBarTimer += Time.fixedDeltaTime;

@@ -9270,8 +9270,8 @@ MonoBehaviour:
   enemies:
   - {fileID: 8967196057861636933, guid: a80c3f4e643e92645ae04331710e1482, type: 3}
   - {fileID: 4480211305165329550, guid: ab56bc72d794109428d2e3a84752a6f4, type: 3}
-  maxTime: 0
-  minTime: 0
+  maxTime: 4
+  minTime: 5
 --- !u!4 &1066379600
 Transform:
   m_ObjectHideFlags: 0
@@ -12040,8 +12040,8 @@ MonoBehaviour:
   enemies:
   - {fileID: 8967196057861636933, guid: a80c3f4e643e92645ae04331710e1482, type: 3}
   - {fileID: 4480211305165329550, guid: ab56bc72d794109428d2e3a84752a6f4, type: 3}
-  maxTime: 0
-  minTime: 0
+  maxTime: 10
+  minTime: 12
 --- !u!4 &1823033645
 Transform:
   m_ObjectHideFlags: 0
@@ -12338,8 +12338,8 @@ MonoBehaviour:
   enemies:
   - {fileID: 8967196057861636933, guid: a80c3f4e643e92645ae04331710e1482, type: 3}
   - {fileID: 4480211305165329550, guid: ab56bc72d794109428d2e3a84752a6f4, type: 3}
-  maxTime: 0
-  minTime: 0
+  maxTime: 2
+  minTime: 6
 --- !u!4 &1966912148
 Transform:
   m_ObjectHideFlags: 0
