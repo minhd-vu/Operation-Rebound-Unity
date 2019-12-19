@@ -51,7 +51,7 @@ TagManager:
   - name: Power Up
     uniqueID: 1353544965
     locked: 0
-  - name: Bullet
+  - name: Projectiles
     uniqueID: 3557362311
     locked: 0
   - name: Enemy
