@@ -7,12 +7,15 @@ public class EnemySpawner : MonoBehaviour
 {
     public GameObject[] enemies;
     private float timer;
-    public float time;
+    public float maxTime;
+    public float minTime;
+    private float time;
 
     // Start is called before the first frame update
     void Start()
     {
         timer = 0f;
+        time = Random.Range(minTime, maxTime);
     }
 
     // Update is called once per frame
@@ -23,6 +26,7 @@ public class EnemySpawner : MonoBehaviour
             GameObject enemy = Instantiate(enemies[Random.Range(0, enemies.Length)], transform);
             enemy.GetComponent<AIDestinationSetter>().target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
             timer = 0f;
+            time = Random.Range(minTime, maxTime);
         }
     }
 }
