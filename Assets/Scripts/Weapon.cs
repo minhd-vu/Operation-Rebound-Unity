@@ -31,6 +31,11 @@ public class Weapon : MonoBehaviour
     [HideInInspector]
     public float damageBonus;
 
+    [SerializeField]
+    private float shakeMagnitude;
+    [SerializeField]
+    private float shakeRoughness;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -78,7 +83,7 @@ public class Weapon : MonoBehaviour
     void Shoot()
     {
         Instantiate(bullet, firePoint.position, firePoint.rotation).GetComponent<Bullet>().damage = damage + damageBonus;
-        CameraShaker.Instance.ShakeOnce(1f, 2f, 0.1f, 0.2f);
+        CameraShaker.Instance.ShakeOnce(shakeMagnitude, shakeRoughness, 0.1f, 0.2f);
         bulletTimer = 0f;
 
         // Reload the weapon if the ammo is too low.
