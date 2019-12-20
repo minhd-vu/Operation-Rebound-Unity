@@ -16,6 +16,8 @@ public class Bullet : MonoBehaviour
     //public GameObject damageIndicator;
     [SerializeField]
     private GameObject muzzleFlashLight;
+    [SerializeField]
+    private GameObject hitEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +46,12 @@ public class Bullet : MonoBehaviour
      */
     void OnCollisionEnter2D(Collision2D collision)
     {
+        if (hitEffect != null)
+        {
+            GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
+            Destroy(effect, 0.18f * 100f / 60f);
+        }
+
         Zombie enemy;
         if ((enemy = collision.gameObject.GetComponent<Zombie>()) != null)
         {

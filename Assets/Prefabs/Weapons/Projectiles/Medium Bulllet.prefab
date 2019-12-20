@@ -144,7 +144,7 @@ SpriteRenderer:
   m_SortingLayerID: -737604985
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8bb7ff56ae0fea14587d1076ed2c6c0a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7cd926ad4ec57c34e948f556c0775593, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -193,7 +193,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.75, y: 0.75}
+    oldSize: {x: 0.5, y: 0.109375}
     newSize: {x: 0.17, y: 0.14}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -219,3 +219,4 @@ MonoBehaviour:
   damage: 0
   muzzleFlashLight: {fileID: 7403891906062648247, guid: 52d15a4902845ad49a2a36c18077b50a,
     type: 3}
+  hitEffect: {fileID: 0}
