@@ -49,7 +49,6 @@ public class Bullet : MonoBehaviour
         if (hitEffect != null)
         {
             GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
-            Destroy(effect, 0.18f * 100f / 60f);
         }
 
         Zombie enemy;
