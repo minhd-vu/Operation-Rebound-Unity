@@ -10,8 +10,7 @@ public class Player : MonoBehaviour
         get { return _health; }
         set
         {
-            _health = value;
-            if (_health > maxHealth)
+            if ((_health = value) > maxHealth)
             {
                 _health = maxHealth;
             }
@@ -30,7 +29,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float regenTime;
     [SerializeField]
-    private Image healthBar;
+    private GameObject healthBar;
     [SerializeField]
     private GameObject damageParticles;
 
@@ -39,6 +38,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI scoreText;
 
+    [SerializeField]
+    private Weapon weapon;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +48,11 @@ public class Player : MonoBehaviour
         regenTimer = 0f;
         healthPerSecondBonus = 0f;
         score = 0;
+
+        healthBar = Instantiate(healthBar);
+        healthBar.GetComponent<HealthBar>().target = transform;
+
+        weapon = Instantiate(weapon, transform);
     }
 
     // Update is called once per frame
@@ -58,8 +65,7 @@ public class Player : MonoBehaviour
         }
 
         // Update the health bar.
-        healthBar.fillAmount = health;
-
+        healthBar.GetComponent<HealthBar>().image.fillAmount = health / maxHealth;
         scoreText.text = "Score: " + score;
     }
 

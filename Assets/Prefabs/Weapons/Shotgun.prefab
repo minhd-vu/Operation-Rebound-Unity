@@ -270,8 +270,8 @@ MonoBehaviour:
   bullet: {fileID: 4642350767651844583, guid: d321ae8ac31d6c24cada09e5a3b8823f, type: 3}
   bullets: 0
   maxBullets: 4
-  bulletsPerSecond: 2
+  bulletsPerSecond: 6
   bulletsPerSecondBonus: 0
-  reloadTime: 2.42
+  reloadTime: 1.45
   damage: 0.88
   damageBonus: 0
