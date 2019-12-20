@@ -1778,7 +1778,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.35140154, y: 0.48986828}
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -1811,7 +1811,7 @@ MonoBehaviour:
   score: 0
   scoreText: {fileID: 664373502}
   sprites:
-  - {fileID: 21300000, guid: c3a2f562b8ffb2b4cbb7e3b3cf09fa7b, type: 3}
+  - {fileID: 21300000, guid: 6cadd297c610c0341a9be8215bb64d83, type: 3}
   - {fileID: 21300000, guid: 0e177d164deec2f4e87d0d37a6490b1c, type: 3}
   weapon: {fileID: 7208839792634489725, guid: 4d63fe9720bbfb5479c8bbb16d1951a7, type: 3}
 --- !u!114 &791079352
@@ -1880,7 +1880,7 @@ SpriteRenderer:
   m_SortingLayerID: -1500022475
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 0e177d164deec2f4e87d0d37a6490b1c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1888,7 +1888,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &819782734
