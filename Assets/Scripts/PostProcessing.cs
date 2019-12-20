@@ -7,20 +7,20 @@ public class PostProcessing : MonoBehaviour
 {
     [SerializeField]
     private Player player;
-    private ColorGrading colorGrading;
+    private ColorGrading colorGrading = null; PostProcessVolume volume;
 
     // Start is called before the first frame update
     void Start()
     {
-        PostProcessVolume volume = gameObject.GetComponent<PostProcessVolume>();
+        volume = gameObject.GetComponent<PostProcessVolume>();
         player = gameObject.GetComponent<Player>();
-        volume.profile.TryGetSettings(out colorGrading);
-        colorGrading.enabled.value = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        volume.profile.TryGetSettings(out colorGrading);
+        colorGrading.enabled.value = true;
         colorGrading.saturation.value = Mathf.Clamp(player.health / player.maxHealth, 0, 1f);
     }
 }
