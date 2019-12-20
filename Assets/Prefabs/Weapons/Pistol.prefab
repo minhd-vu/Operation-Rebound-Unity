@@ -277,3 +277,4 @@ MonoBehaviour:
   damageBonus: 0
   shakeMagnitude: 1
   shakeRoughness: 2
+  isOneHanded: 1

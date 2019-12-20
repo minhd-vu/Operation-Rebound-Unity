@@ -38,6 +38,15 @@ public class Player : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI scoreText;
 
+    private enum States
+    {
+        ONE_HAND,
+        TWO_HAND,
+    }
+
+    [SerializeField]
+    private Sprite[] sprites;
+
     [SerializeField]
     private Weapon weapon;
 
@@ -53,6 +62,7 @@ public class Player : MonoBehaviour
         healthBar.GetComponent<HealthBar>().target = transform;
 
         weapon = Instantiate(weapon, transform);
+        GetComponent<SpriteRenderer>().sprite = sprites[weapon.isOneHanded ? (int)States.ONE_HAND : (int)States.TWO_HAND];
     }
 
     // Update is called once per frame

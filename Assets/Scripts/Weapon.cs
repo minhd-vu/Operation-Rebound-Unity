@@ -36,6 +36,8 @@ public class Weapon : MonoBehaviour
     [SerializeField]
     private float shakeRoughness;
 
+    public bool isOneHanded;
+
     // Start is called before the first frame update
     void Start()
     {
