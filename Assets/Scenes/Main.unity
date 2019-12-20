@@ -174,7 +174,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &151640353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 151640352}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
@@ -1883,7 +1883,7 @@ MonoBehaviour:
   sprites:
   - {fileID: 21300000, guid: 6cadd297c610c0341a9be8215bb64d83, type: 3}
   - {fileID: 21300000, guid: 0e177d164deec2f4e87d0d37a6490b1c, type: 3}
-  weapon: {fileID: 7208839792634489725, guid: 646cab6a84b07214e96b894a476af153, type: 3}
+  weapon: {fileID: 7208839792634489725, guid: 8c86e528c013f0f48849b68595b0f692, type: 3}
 --- !u!114 &791079352
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -149,3 +149,4 @@ MonoBehaviour:
     type: 3}
   hitEffect: {fileID: 5025482049243821298, guid: 094a048a37b2ed44385a9f219229ee8f,
     type: 3}
+  blastRadius: 2
