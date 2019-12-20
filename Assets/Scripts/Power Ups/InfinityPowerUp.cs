@@ -11,7 +11,7 @@ public class InfinityPowerUp : PowerUp
 
     protected override IEnumerator PickUp(Collider2D collider)
     {
-        Weapon weapon = collider.GetComponent<Weapon>();
+        Weapon weapon = collider.GetComponentInChildren<Weapon>();
         weapon.bulletsPerSecondBonus = bulletsPerSecond;
         weapon.bullets = weapon.maxBullets + extraBullets;
 
