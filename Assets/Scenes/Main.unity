@@ -1889,7 +1889,7 @@ MonoBehaviour:
     type: 3}
   score: 0
   scoreText: {fileID: 664373502}
-  weapon: {fileID: 7208839792634489725, guid: 4d63fe9720bbfb5479c8bbb16d1951a7, type: 3}
+  weapon: {fileID: 7208839792634489725, guid: 8c86e528c013f0f48849b68595b0f692, type: 3}
 --- !u!114 &791079352
 MonoBehaviour:
   m_ObjectHideFlags: 0
