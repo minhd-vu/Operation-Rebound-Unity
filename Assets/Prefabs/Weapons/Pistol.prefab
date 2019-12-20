@@ -267,7 +267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 7208839792468571061}
-  bullet: {fileID: 4642350767651844583, guid: d321ae8ac31d6c24cada09e5a3b8823f, type: 3}
+  bullet: {fileID: 4642350767651844583, guid: bceac364dffbcc34981f0086f6329318, type: 3}
   bullets: 0
   maxBullets: 10
   bulletsPerSecond: 7

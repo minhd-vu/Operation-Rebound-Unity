@@ -1496,7 +1496,7 @@ Transform:
   m_GameObject: {fileID: 709170659}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -9.307, y: -9.502, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0000005, y: 1.0000005, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 14
@@ -1889,7 +1889,7 @@ MonoBehaviour:
     type: 3}
   score: 0
   scoreText: {fileID: 664373502}
-  weapon: {fileID: 7208839792634489725, guid: 542ee8576b7d2bb4cacf8cf5e14307fc, type: 3}
+  weapon: {fileID: 7208839792634489725, guid: 4d63fe9720bbfb5479c8bbb16d1951a7, type: 3}
 --- !u!114 &791079352
 MonoBehaviour:
   m_ObjectHideFlags: 0
