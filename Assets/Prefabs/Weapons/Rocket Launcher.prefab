@@ -198,7 +198,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7208839792634489728}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.19, y: -0.3, z: 0}
+  m_LocalPosition: {x: 0.13, y: -0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7208839792468571061}
@@ -269,9 +269,12 @@ MonoBehaviour:
   firePoint: {fileID: 7208839792468571061}
   bullet: {fileID: 4642350767651844583, guid: 49fa800cfcce540428a1efa23a409ca0, type: 3}
   bullets: 0
-  maxBullets: 4
-  bulletsPerSecond: 2
+  maxBullets: 1
+  bulletsPerSecond: 10
   bulletsPerSecondBonus: 0
-  reloadTime: 2.42
+  reloadTime: 0.87
   damage: 0.88
   damageBonus: 0
+  shakeMagnitude: 1
+  shakeRoughness: 1
+  isOneHanded: 0
