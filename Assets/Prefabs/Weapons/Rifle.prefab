@@ -268,6 +268,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 7208839792468571061}
   bullet: {fileID: 4642350767651844583, guid: 799ec6cb2e3dc7f4eb093809fdb0a845, type: 3}
+  muzzleFlash: {fileID: 7403891906062648247, guid: 52d15a4902845ad49a2a36c18077b50a,
+    type: 3}
   bullets: 0
   maxBullets: 30
   bulletsPerSecond: 12
@@ -277,4 +279,5 @@ MonoBehaviour:
   damageBonus: 0
   shakeMagnitude: 1
   shakeRoughness: 3
+  audio: Fire Assault Rifle
   isOneHanded: 0

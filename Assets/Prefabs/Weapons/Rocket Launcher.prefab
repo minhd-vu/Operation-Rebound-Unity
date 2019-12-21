@@ -268,6 +268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 7208839792468571061}
   bullet: {fileID: 4642350767651844583, guid: 49fa800cfcce540428a1efa23a409ca0, type: 3}
+  muzzleFlash: {fileID: 0}
   bullets: 0
   maxBullets: 1
   bulletsPerSecond: 10
@@ -277,4 +278,5 @@ MonoBehaviour:
   damageBonus: 0
   shakeMagnitude: 1
   shakeRoughness: 1
+  audio: Fire Rocket Launcher
   isOneHanded: 0

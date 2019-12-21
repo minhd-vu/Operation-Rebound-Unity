@@ -10,6 +10,8 @@ public class Weapon : MonoBehaviour
     private Transform firePoint;
     [SerializeField]
     private GameObject bullet;
+    [SerializeField]
+    private GameObject muzzleFlash;
 
     [HideInInspector]
     public int bullets;
@@ -35,6 +37,9 @@ public class Weapon : MonoBehaviour
     private float shakeMagnitude;
     [SerializeField]
     private float shakeRoughness;
+
+    [SerializeField]
+    private string audio;
 
     public bool isOneHanded;
 
@@ -85,6 +90,8 @@ public class Weapon : MonoBehaviour
     void Shoot()
     {
         Instantiate(bullet, firePoint.position, firePoint.rotation).GetComponent<Bullet>().damage = damage + damageBonus;
+        Instantiate(muzzleFlash, firePoint.position, firePoint.rotation);
+        AudioManager.instance.Play(audio);
         CameraShaker.Instance.ShakeOnce(shakeMagnitude, shakeRoughness, 0.1f, 0.2f);
         bulletTimer = 0f;
 
