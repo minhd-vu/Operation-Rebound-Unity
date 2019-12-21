@@ -278,5 +278,6 @@ MonoBehaviour:
   damageBonus: 0
   shakeMagnitude: 1
   shakeRoughness: 1
-  audio: Fire Rocket Launcher
+  audioString: Fire Rocket Launcher
+  bulletCounter: {fileID: 0}
   isOneHanded: 0

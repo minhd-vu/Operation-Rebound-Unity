@@ -279,5 +279,6 @@ MonoBehaviour:
   damageBonus: 0
   shakeMagnitude: 1
   shakeRoughness: 2
-  audio: Fire Pistol
+  audioString: Fire Pistol
+  bulletCounter: {fileID: 0}
   isOneHanded: 1

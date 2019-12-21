@@ -279,5 +279,6 @@ MonoBehaviour:
   damageBonus: 0
   shakeMagnitude: 4
   shakeRoughness: 4
-  audio: Fire Sniper
+  audioString: Fire Sniper
+  bulletCounter: {fileID: 0}
   isOneHanded: 0

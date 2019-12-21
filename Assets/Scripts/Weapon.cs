@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using EZCameraShake;
+using TMPro;
 
 public class Weapon : MonoBehaviour
 {
@@ -39,7 +40,7 @@ public class Weapon : MonoBehaviour
     private float shakeRoughness;
 
     [SerializeField]
-    private string audio;
+    private string audioString;
 
     public bool isOneHanded;
 
@@ -81,6 +82,8 @@ public class Weapon : MonoBehaviour
             reloadTimer = 0f;
             reloading = false;
         }
+
+        GameObject.FindWithTag("Bullet Counter").GetComponent<TextMeshProUGUI>().text = bullets + "";
     }
 
     /**
@@ -91,7 +94,7 @@ public class Weapon : MonoBehaviour
     {
         Instantiate(bullet, firePoint.position, firePoint.rotation).GetComponent<Bullet>().damage = damage + damageBonus;
         Instantiate(muzzleFlash, firePoint.position, firePoint.rotation);
-        AudioManager.instance.Play(audio);
+        AudioManager.instance.Play(audioString);
         CameraShaker.Instance.ShakeOnce(shakeMagnitude, shakeRoughness, 0.1f, 0.2f);
         bulletTimer = 0f;
 
