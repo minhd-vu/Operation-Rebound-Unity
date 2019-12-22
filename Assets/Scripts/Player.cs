@@ -38,6 +38,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI scoreText;
 
+    public Image img;
+
     private enum States
     {
         ONE_HAND,
@@ -76,6 +78,7 @@ public class Player : MonoBehaviour
 
         // Update the health bar.
         healthBar.GetComponent<HealthBar>().image.fillAmount = health / maxHealth;
+        img.GetComponent<Image>().fillAmount = health / maxHealth;
         scoreText.text = "Score: " + score;
     }
 

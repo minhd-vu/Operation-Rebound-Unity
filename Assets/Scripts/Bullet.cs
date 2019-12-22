@@ -15,8 +15,6 @@ public class Bullet : MonoBehaviour
 
     //public GameObject damageIndicator;
     [SerializeField]
-    private GameObject muzzleFlashLight;
-    [SerializeField]
     private GameObject hitEffect;
     [SerializeField]
     private float blastRadius;
@@ -26,8 +24,6 @@ public class Bullet : MonoBehaviour
     {
         GetComponent<Rigidbody2D>().velocity = transform.right * speed;
         initialPosition = transform.position;
-        Instantiate(muzzleFlashLight, initialPosition, transform.rotation);
-        AudioManager.instance.Play("Fire Bullet");
     }
 
     // Update is called once per frame
