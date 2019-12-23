@@ -279,6 +279,5 @@ MonoBehaviour:
   damageBonus: 0
   shakeMagnitude: 1
   shakeRoughness: 3
-  audioString: Fire Rifle
-  bulletCounter: {fileID: 0}
+  audioString: Fire Assault Rifle
   isOneHanded: 0

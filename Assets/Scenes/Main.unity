@@ -174,7 +174,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &151640353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1023,6 +1023,7 @@ MonoBehaviour:
   enemies:
   - {fileID: 8967196057861636933, guid: a80c3f4e643e92645ae04331710e1482, type: 3}
   - {fileID: 4480211305165329550, guid: ab56bc72d794109428d2e3a84752a6f4, type: 3}
+  - {fileID: 4480211305165329550, guid: e9530812eb98129419e1628ef6db4efb, type: 3}
   maxTime: 8
   minTime: 2
 --- !u!1 &295437373
@@ -1189,7 +1190,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &452190069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2105,7 +2106,7 @@ MonoBehaviour:
   sprites:
   - {fileID: 21300000, guid: 6cadd297c610c0341a9be8215bb64d83, type: 3}
   - {fileID: 21300000, guid: 0e177d164deec2f4e87d0d37a6490b1c, type: 3}
-  weapon: {fileID: 7208839792634489725, guid: a62269bf62adf0741a4473770e14b732, type: 3}
+  weapon: {fileID: 7208839792634489725, guid: 4d63fe9720bbfb5479c8bbb16d1951a7, type: 3}
 --- !u!114 &791079352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9752,6 +9753,7 @@ MonoBehaviour:
   enemies:
   - {fileID: 8967196057861636933, guid: a80c3f4e643e92645ae04331710e1482, type: 3}
   - {fileID: 4480211305165329550, guid: ab56bc72d794109428d2e3a84752a6f4, type: 3}
+  - {fileID: 4480211305165329550, guid: e9530812eb98129419e1628ef6db4efb, type: 3}
   maxTime: 4
   minTime: 5
 --- !u!4 &1066379600
@@ -12689,6 +12691,7 @@ MonoBehaviour:
   enemies:
   - {fileID: 8967196057861636933, guid: a80c3f4e643e92645ae04331710e1482, type: 3}
   - {fileID: 4480211305165329550, guid: ab56bc72d794109428d2e3a84752a6f4, type: 3}
+  - {fileID: 4480211305165329550, guid: e9530812eb98129419e1628ef6db4efb, type: 3}
   maxTime: 10
   minTime: 12
 --- !u!4 &1823033645
@@ -12987,6 +12990,7 @@ MonoBehaviour:
   enemies:
   - {fileID: 8967196057861636933, guid: a80c3f4e643e92645ae04331710e1482, type: 3}
   - {fileID: 4480211305165329550, guid: ab56bc72d794109428d2e3a84752a6f4, type: 3}
+  - {fileID: 4480211305165329550, guid: e9530812eb98129419e1628ef6db4efb, type: 3}
   maxTime: 2
   minTime: 6
 --- !u!4 &1966912148
