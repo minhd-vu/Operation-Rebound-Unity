@@ -7,7 +7,6 @@ using TMPro;
 
 public class Weapon : MonoBehaviour
 {
-    [SerializeField]
     private Transform firePoint;
     [SerializeField]
     private GameObject bullet;
@@ -52,6 +51,7 @@ public class Weapon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        firePoint = transform.Find("FirePoint");
         bullets = maxBullets;
         reloadTimer = 0f;
         bulletTimer = 0f;
