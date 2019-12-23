@@ -42,6 +42,9 @@ public class Weapon : MonoBehaviour
     [SerializeField]
     private string audioString;
 
+    [SerializeField]
+    private float recoilSpreadDegree;
+
     public bool isOneHanded;
 
     // Start is called before the first frame update
@@ -92,7 +95,9 @@ public class Weapon : MonoBehaviour
      */
     void Shoot()
     {
-        Instantiate(bullet, firePoint.position, firePoint.rotation).GetComponent<Bullet>().damage = damage + damageBonus;
+        Bullet b = Instantiate(bullet, firePoint.position, firePoint.rotation).GetComponent<Bullet>();
+        b.damage = damage + damageBonus;
+        b.transform.Rotate(Vector3.forward * UnityEngine.Random.Range(-1f, 1f) * recoilSpreadDegree);
         Instantiate(muzzleFlash, firePoint.position, firePoint.rotation);
         AudioManager.instance.Play(audioString);
         CameraShaker.Instance.ShakeOnce(shakeMagnitude, shakeRoughness, 0.1f, 0.2f);

@@ -280,4 +280,5 @@ MonoBehaviour:
   shakeMagnitude: 1
   shakeRoughness: 3
   audioString: Fire Assault Rifle
+  recoilSpreadDegree: 5
   isOneHanded: 0

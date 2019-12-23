@@ -280,5 +280,5 @@ MonoBehaviour:
   shakeMagnitude: 1
   shakeRoughness: 2
   audioString: Fire Pistol
-  bulletCounter: {fileID: 0}
+  recoilSpreadDegree: 6
   isOneHanded: 1
