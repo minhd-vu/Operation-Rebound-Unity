@@ -280,5 +280,6 @@ MonoBehaviour:
   shakeMagnitude: 4
   shakeRoughness: 4
   audioString: Fire Sniper
-  recoilSpreadDegree: 1
+  spreadDegree: 1
+  numberOfBullets: 1
   isOneHanded: 0

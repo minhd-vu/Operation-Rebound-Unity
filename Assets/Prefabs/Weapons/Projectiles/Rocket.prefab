@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -4839017532360186080}
   m_Layer: 0
   m_Name: Rocket
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145,8 +145,6 @@ MonoBehaviour:
   speed: 12
   range: 10
   damage: 0
-  muzzleFlashLight: {fileID: 7403891906062648247, guid: 52d15a4902845ad49a2a36c18077b50a,
-    type: 3}
   hitEffect: {fileID: 5025482049243821298, guid: 094a048a37b2ed44385a9f219229ee8f,
     type: 3}
   blastRadius: 2

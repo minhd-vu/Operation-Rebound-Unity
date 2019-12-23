@@ -2106,7 +2106,7 @@ MonoBehaviour:
   sprites:
   - {fileID: 21300000, guid: 6cadd297c610c0341a9be8215bb64d83, type: 3}
   - {fileID: 21300000, guid: 0e177d164deec2f4e87d0d37a6490b1c, type: 3}
-  weapon: {fileID: 7208839792634489725, guid: 4d63fe9720bbfb5479c8bbb16d1951a7, type: 3}
+  weapon: {fileID: 7208839792634489725, guid: 2a600888918d5284b879277c2f01cff0, type: 3}
 --- !u!114 &791079352
 MonoBehaviour:
   m_ObjectHideFlags: 0

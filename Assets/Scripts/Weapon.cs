@@ -43,7 +43,9 @@ public class Weapon : MonoBehaviour
     private string audioString;
 
     [SerializeField]
-    private float recoilSpreadDegree;
+    private float spreadDegree;
+    [SerializeField]
+    private int numberOfBullets;
 
     public bool isOneHanded;
 
@@ -95,9 +97,11 @@ public class Weapon : MonoBehaviour
      */
     void Shoot()
     {
-        Bullet b = Instantiate(bullet, firePoint.position, firePoint.rotation).GetComponent<Bullet>();
-        b.damage = damage + damageBonus;
-        b.transform.Rotate(Vector3.forward * UnityEngine.Random.Range(-1f, 1f) * recoilSpreadDegree);
+        for (int i = 0; i < numberOfBullets; ++i) {
+            Bullet b = Instantiate(bullet, firePoint.position, firePoint.rotation).GetComponent<Bullet>();
+            b.damage = damage + damageBonus;
+            b.transform.Rotate(Vector3.forward * UnityEngine.Random.Range(-1f, 1f) * spreadDegree);
+        }
         Instantiate(muzzleFlash, firePoint.position, firePoint.rotation);
         AudioManager.instance.Play(audioString);
         CameraShaker.Instance.ShakeOnce(shakeMagnitude, shakeRoughness, 0.1f, 0.2f);

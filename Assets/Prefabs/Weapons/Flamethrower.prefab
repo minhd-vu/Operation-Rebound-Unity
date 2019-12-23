@@ -280,5 +280,6 @@ MonoBehaviour:
   shakeMagnitude: 1
   shakeRoughness: 1
   audioString: Fire Flamethrower
-  bulletCounter: {fileID: 0}
+  spreadDegree: 0
+  numberOfBullets: 1
   isOneHanded: 0

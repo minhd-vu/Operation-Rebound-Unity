@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7843079955127707689}
   - component: {fileID: 2445192186796454702}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sprite Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   - component: {fileID: 4642350767651845659}
   - component: {fileID: 4642350767651845658}
   - component: {fileID: -4839017532360186080}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Small Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,6 +217,5 @@ MonoBehaviour:
   speed: 12
   range: 10
   damage: 0
-  muzzleFlashLight: {fileID: 7403891906062648247, guid: 52d15a4902845ad49a2a36c18077b50a,
-    type: 3}
   hitEffect: {fileID: 0}
+  blastRadius: 0

@@ -88,7 +88,6 @@ public class Player : MonoBehaviour
     public void damage(float damage)
     {
         health -= damage;
-        Debug.Log(health);
         Instantiate(damageParticles, transform);
     }
 }

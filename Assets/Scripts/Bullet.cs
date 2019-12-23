@@ -44,36 +44,39 @@ public class Bullet : MonoBehaviour
      */
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Zombie enemy;
-
-        if (hitEffect != null)
+        if (!collision.gameObject.CompareTag("Projectile"))
         {
-            Instantiate(hitEffect, transform.position, Quaternion.identity);
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, blastRadius);
-            foreach (Collider2D collider in colliders)
+            Zombie enemy;
+
+            if (hitEffect != null)
             {
-                enemy = collider.GetComponent<Zombie>();
-                if (enemy != null)
+                Instantiate(hitEffect, transform.position, Quaternion.identity);
+                Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, blastRadius);
+                foreach (Collider2D collider in colliders)
                 {
-                    float proximity = (transform.position - enemy.transform.position).magnitude;
-                    float effect = 1 - (proximity / blastRadius);
-                    enemy.damage(damage * effect);
+                    enemy = collider.GetComponent<Zombie>();
+                    if (enemy != null)
+                    {
+                        float proximity = (transform.position - enemy.transform.position).magnitude;
+                        float effect = 1 - (proximity / blastRadius);
+                        enemy.damage(damage * effect);
+                    }
                 }
             }
-        }
 
-        else
-        {
-            if ((enemy = collision.gameObject.GetComponent<Zombie>()) != null)
+            else
             {
-                // Damage the enemy.
-                enemy.damage(damage);
+                if ((enemy = collision.gameObject.GetComponent<Zombie>()) != null)
+                {
+                    // Damage the enemy.
+                    enemy.damage(damage);
 
-                // Create damage numbers appear after an enemy being damaged.
-                //Instantiate(damageIndicator, enemy.transform.position, Quaternion.Euler(Vector3.zero)).GetComponent<NumberIndicator>().number = (int)(damage * 100);
+                    // Create damage numbers appear after an enemy being damaged.
+                    //Instantiate(damageIndicator, enemy.transform.position, Quaternion.Euler(Vector3.zero)).GetComponent<NumberIndicator>().number = (int)(damage * 100);
+                }
             }
-        }
 
-        Destroy(gameObject);
+            Destroy(gameObject);
+        }
     }
 }

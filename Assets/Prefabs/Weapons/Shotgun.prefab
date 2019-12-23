@@ -267,7 +267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 7208839792468571061}
-  bullet: {fileID: 4642350767651844583, guid: d321ae8ac31d6c24cada09e5a3b8823f, type: 3}
+  bullet: {fileID: 4642350767651844583, guid: 799ec6cb2e3dc7f4eb093809fdb0a845, type: 3}
   muzzleFlash: {fileID: 7403891906062648247, guid: 52d15a4902845ad49a2a36c18077b50a,
     type: 3}
   bullets: 0
@@ -280,5 +280,6 @@ MonoBehaviour:
   shakeMagnitude: 2
   shakeRoughness: 3
   audioString: Fire Shotgun
-  recoilSpreadDegree: 4
+  spreadDegree: 15
+  numberOfBullets: 8
   isOneHanded: 0
