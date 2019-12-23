@@ -67,7 +67,8 @@ public class Weapon : MonoBehaviour
         if (!reloading)
         {
             // Allows firing when button is held down (for user experience).
-            if (Input.GetButton("Fire1") && (bulletTimer += Time.deltaTime) >= 1f / bulletsPerSecond)
+           
+            if (Input.GetButtonDown("Fire1") || (Input.GetButton("Fire1") && (bulletTimer += Time.deltaTime) >= 1f / bulletsPerSecond))
             {
                 Shoot();
             }
