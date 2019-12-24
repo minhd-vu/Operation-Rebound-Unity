@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8967196057118657577}
   - component: {fileID: 8967196057118657578}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 8967196057861636940}
   - component: {fileID: 8967196057861636931}
   - component: {fileID: 8967196057861636941}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Zombief
   m_TagString: Untagged
   m_Icon: {fileID: 0}

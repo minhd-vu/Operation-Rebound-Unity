@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 input;
     private Vector2 mousePosition;
-    private bool dodging;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +31,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            StartCoroutine(Dash(duration));
+            StartCoroutine(Dash(dashDuration));
         }
     }
 
@@ -40,17 +39,21 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 dashVector = rb.transform.position + (Vector3)input * dashForce;
         rb.DOMove(dashVector, duration);
+        Physics2D.IgnoreLayerCollision(10, 11, isDashing = true);
         yield return new WaitForSeconds(duration);
+        Physics2D.IgnoreLayerCollision(10, 11, isDashing = false);
     }
 
-    private float dashForce = 4f;
-    private float duration = 0.3f;
+    public bool isDashing = false;
+    [SerializeField] private float dashForce = 3f;
+    [SerializeField] private float dashDuration = 0.3f;
 
     private void FixedUpdate()
     {
         // Move the player based on the input.
         float speed = moveSpeed + moveSpeedBonus;
 
+        if (!isDashing)
         rb.velocity = new Vector2(input.x * speed, input.y * speed);
 
         // Rotate the player

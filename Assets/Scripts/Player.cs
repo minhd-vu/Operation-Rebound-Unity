@@ -86,7 +86,10 @@ public class Player : MonoBehaviour
      */
     public void damage(float damage)
     {
-        health -= damage;
-        Instantiate(damageParticles, transform);
+        if (!gameObject.GetComponent<PlayerController>().isDashing)
+        {
+            health -= damage;
+            Instantiate(damageParticles, transform);
+        }
     }
 }
