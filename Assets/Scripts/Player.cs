@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float regenTime;
     [SerializeField]
-    private GameObject healthBar;
+    private Image healthBar;
     [SerializeField]
     private GameObject damageParticles;
 
@@ -38,7 +38,6 @@ public class Player : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI scoreText;
 
-    public Image img;
 
     private enum States
     {
@@ -60,9 +59,6 @@ public class Player : MonoBehaviour
         healthPerSecondBonus = 0f;
         score = 0;
 
-        healthBar = Instantiate(healthBar);
-        healthBar.GetComponent<HealthBar>().target = transform;
-
         weapon = Instantiate(weapon, transform);
         GetComponent<SpriteRenderer>().sprite = sprites[weapon.isOneHanded ? (int)States.ONE_HAND : (int)States.TWO_HAND];
     }
@@ -77,8 +73,7 @@ public class Player : MonoBehaviour
         }
 
         // Update the health bar.
-        healthBar.GetComponent<HealthBar>().image.fillAmount = health / maxHealth;
-        img.GetComponent<Image>().fillAmount = health / maxHealth;
+        healthBar.GetComponent<Image>().fillAmount = health / maxHealth;
         scoreText.text = "Score: " + score;
     }
 
