@@ -126,7 +126,6 @@ public class Weapon : MonoBehaviour
     void Reload()
     {
         AudioManager.instance.Play("Start Reload");
-        Instantiate(reloadIndicator);
         reloading = true;
     }
 }
