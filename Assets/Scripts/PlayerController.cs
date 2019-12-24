@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     public bool isDashing = false;
     [SerializeField] private float dashForce = 3f;
     [SerializeField] private float dashDuration = 0.3f;
-    Coroutine dash;
+    private Coroutine dash;
 
 
     // Start is called before the first frame update
