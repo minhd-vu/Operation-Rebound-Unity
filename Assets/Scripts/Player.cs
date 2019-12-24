@@ -75,7 +75,7 @@ public class Player : MonoBehaviour
 
         // Update the health bar.
         healthBar.GetComponent<Image>().fillAmount = health / maxHealth;
-        scoreText.text = "Score: " + score;
+        scoreText.text = score + "";
 
         float shake = (maxHealth - health) / maxHealth * 2f;
         CameraShaker.Instance.ShakeOnce(shake, shake, 0.1f, Time.deltaTime);
