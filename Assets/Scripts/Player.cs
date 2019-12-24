@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using EZCameraShake;
 
 public class Player : MonoBehaviour
 {
@@ -75,6 +76,9 @@ public class Player : MonoBehaviour
         // Update the health bar.
         healthBar.GetComponent<Image>().fillAmount = health / maxHealth;
         scoreText.text = "Score: " + score;
+
+        float shake = (maxHealth - health) / maxHealth * 4f;
+        CameraShaker.Instance.ShakeOnce(shake, shake, 0.1f, Time.deltaTime);
     }
 
     /**
