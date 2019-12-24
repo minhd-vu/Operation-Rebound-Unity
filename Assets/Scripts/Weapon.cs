@@ -103,7 +103,10 @@ public class Weapon : MonoBehaviour
             b.damage = damage + damageBonus;
             b.transform.Rotate(Vector3.forward * UnityEngine.Random.Range(-1f, 1f) * spreadDegree);
         }
-        Instantiate(muzzleFlash, firePoint.position, firePoint.rotation);
+        if (muzzleFlash != null)
+        {
+            Instantiate(muzzleFlash, firePoint.position, firePoint.rotation);
+        }
         AudioManager.instance.Play(audioString);
         CameraShaker.Instance.ShakeOnce(shakeMagnitude, shakeRoughness, 0.1f, 0.2f);
         bulletTimer = 0f;

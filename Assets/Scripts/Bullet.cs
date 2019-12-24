@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using EZCameraShake;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -44,39 +45,38 @@ public class Bullet : MonoBehaviour
      */
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!collision.gameObject.CompareTag("Projectile"))
+        Zombie enemy;
+
+        if (hitEffect != null)
         {
-            Zombie enemy;
-
-            if (hitEffect != null)
+            Instantiate(hitEffect, transform.position, Quaternion.identity);
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, blastRadius);
+            foreach (Collider2D collider in colliders)
             {
-                Instantiate(hitEffect, transform.position, Quaternion.identity);
-                Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, blastRadius);
-                foreach (Collider2D collider in colliders)
+                enemy = collider.GetComponent<Zombie>();
+                if (enemy != null)
                 {
-                    enemy = collider.GetComponent<Zombie>();
-                    if (enemy != null)
-                    {
-                        float proximity = (transform.position - enemy.transform.position).magnitude;
-                        float effect = 1 - (proximity / blastRadius);
-                        enemy.damage(damage * effect);
-                    }
+                    float proximity = (transform.position - enemy.transform.position).magnitude;
+                    float effect = 1 - (proximity / blastRadius);
+                    enemy.damage(damage * effect);
                 }
             }
 
-            else
-            {
-                if ((enemy = collision.gameObject.GetComponent<Zombie>()) != null)
-                {
-                    // Damage the enemy.
-                    enemy.damage(damage);
-
-                    // Create damage numbers appear after an enemy being damaged.
-                    //Instantiate(damageIndicator, enemy.transform.position, Quaternion.Euler(Vector3.zero)).GetComponent<NumberIndicator>().number = (int)(damage * 100);
-                }
-            }
-
-            Destroy(gameObject);
+            CameraShaker.Instance.ShakeOnce(2f, 3f, 0.1f, 0.2f);
         }
+
+        else
+        {
+            if ((enemy = collision.gameObject.GetComponent<Zombie>()) != null)
+            {
+                // Damage the enemy.
+                enemy.damage(damage);
+
+                // Create damage numbers appear after an enemy being damaged.
+                //Instantiate(damageIndicator, enemy.transform.position, Quaternion.Euler(Vector3.zero)).GetComponent<NumberIndicator>().number = (int)(damage * 100);
+            }
+        }
+
+        Destroy(gameObject);
     }
 }

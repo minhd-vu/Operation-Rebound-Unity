@@ -174,7 +174,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &151640353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1190,7 +1190,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &452190069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2026,7 +2026,7 @@ GameObject:
   - component: {fileID: 791079349}
   - component: {fileID: 791079352}
   - component: {fileID: 791079351}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2104,9 +2104,9 @@ MonoBehaviour:
   scoreText: {fileID: 664373502}
   img: {fileID: 1730823808}
   sprites:
-  - {fileID: 21300000, guid: 6cadd297c610c0341a9be8215bb64d83, type: 3}
-  - {fileID: 21300000, guid: 0e177d164deec2f4e87d0d37a6490b1c, type: 3}
-  weapon: {fileID: 7208839792634489725, guid: 2a600888918d5284b879277c2f01cff0, type: 3}
+  - {fileID: 21300000, guid: b0bbed817fb111c4e99e8f5312fb8b8b, type: 3}
+  - {fileID: 21300000, guid: 359f4b8a37046d14e996d4a6c88832c4, type: 3}
+  weapon: {fileID: 7208839792634489725, guid: 646cab6a84b07214e96b894a476af153, type: 3}
 --- !u!114 &791079352
 MonoBehaviour:
   m_ObjectHideFlags: 0
