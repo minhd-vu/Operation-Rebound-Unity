@@ -15,6 +15,12 @@ public class PlayerController : MonoBehaviour
     private Vector2 input;
     private Vector2 mousePosition;
 
+    public bool isDashing = false;
+    [SerializeField] private float dashForce = 3f;
+    [SerializeField] private float dashDuration = 0.3f;
+    Coroutine dash;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,9 +35,9 @@ public class PlayerController : MonoBehaviour
         input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !isDashing)
         {
-            StartCoroutine(Dash(dashDuration));
+            dash = StartCoroutine(Dash(dashDuration));
         }
     }
 
@@ -44,9 +50,15 @@ public class PlayerController : MonoBehaviour
         Physics2D.IgnoreLayerCollision(10, 11, isDashing = false);
     }
 
-    public bool isDashing = false;
-    [SerializeField] private float dashForce = 3f;
-    [SerializeField] private float dashDuration = 0.3f;
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (isDashing && dash != null)
+        {
+            rb.DOKill();
+            StopCoroutine(dash);
+            Physics2D.IgnoreLayerCollision(10, 11, isDashing = false);
+        }
+    }
 
     private void FixedUpdate()
     {
@@ -54,7 +66,9 @@ public class PlayerController : MonoBehaviour
         float speed = moveSpeed + moveSpeedBonus;
 
         if (!isDashing)
-        rb.velocity = new Vector2(input.x * speed, input.y * speed);
+        {
+            rb.velocity = new Vector2(input.x * speed, input.y * speed);
+        }
 
         // Rotate the player
         Vector2 direction = mousePosition - rb.position;
