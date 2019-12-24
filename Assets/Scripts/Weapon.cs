@@ -46,8 +46,6 @@ public class Weapon : MonoBehaviour
     [SerializeField]
     private int numberOfBullets;
 
-    [SerializeField] private GameObject reloadIndicator;
-
     public bool isOneHanded;
 
     // Start is called before the first frame update
