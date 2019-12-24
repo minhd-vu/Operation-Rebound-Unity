@@ -46,6 +46,8 @@ public class Weapon : MonoBehaviour
     [SerializeField]
     private int numberOfBullets;
 
+    [SerializeField] private GameObject reloadIndicator;
+
     public bool isOneHanded;
 
     // Start is called before the first frame update
@@ -124,6 +126,7 @@ public class Weapon : MonoBehaviour
     void Reload()
     {
         AudioManager.instance.Play("Start Reload");
+        Instantiate(reloadIndicator);
         reloading = true;
     }
 }
