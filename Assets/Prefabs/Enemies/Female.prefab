@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8967196057118657577}
   - component: {fileID: 8967196057118657578}
+  - component: {fileID: 8729029565308789066}
   m_Layer: 11
   m_Name: Sprite
   m_TagString: Untagged
@@ -81,6 +82,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &8729029565308789066
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8967196057118657576}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3d3068437a2cc574aa5729d9fd60e80f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8967196057861636933
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,10 +112,10 @@ GameObject:
   - component: {fileID: 8967196057861636930}
   - component: {fileID: 8967196057861636928}
   - component: {fileID: 8967196057861636935}
-  - component: {fileID: 8925671118689102147}
   - component: {fileID: 8967196057861636940}
   - component: {fileID: 8967196057861636931}
   - component: {fileID: 8967196057861636941}
+  - component: {fileID: 372773367210003265}
   m_Layer: 11
   m_Name: Female
   m_TagString: Untagged
@@ -155,25 +175,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &8925671118689102147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8967196057861636933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45e525b1849a24c4d8f89bbd43824af6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackDamage: 0.07
-  moveSpeed: 2.5
-  maxHealth: 1
-  healthBar: {fileID: 2525818274215079747, guid: 606818c1dc1d56c4ba02103c2723a906,
-    type: 3}
-  damageParticles: {fileID: 7886777790140101917, guid: d8ae350e6dcef7448a82732be28bc15a,
-    type: 3}
 --- !u!114 &8967196057861636940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,3 +253,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 7958632291504817304, guid: b151795696a8b8a498856475a1c6d24a, type: 3}
+--- !u!114 &372773367210003265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8967196057861636933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e525b1849a24c4d8f89bbd43824af6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 0.07
+  moveSpeed: 2.5
+  maxHealth: 1
+  healthBar: {fileID: 2525818274215079747, guid: 606818c1dc1d56c4ba02103c2723a906,
+    type: 3}
+  damageParticles: {fileID: 7886777790140101917, guid: d8ae350e6dcef7448a82732be28bc15a,
+    type: 3}

@@ -720,8 +720,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 8967196057861636933, guid: a80c3f4e643e92645ae04331710e1482, type: 3}
-  - {fileID: 4480211305165329550, guid: e9530812eb98129419e1628ef6db4efb, type: 3}
-  - {fileID: 4480211305165329550, guid: ab56bc72d794109428d2e3a84752a6f4, type: 3}
   maxTime: 8
   minTime: 2
 --- !u!1 &295437373
@@ -9020,8 +9018,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 8967196057861636933, guid: a80c3f4e643e92645ae04331710e1482, type: 3}
-  - {fileID: 4480211305165329550, guid: e9530812eb98129419e1628ef6db4efb, type: 3}
-  - {fileID: 4480211305165329550, guid: ab56bc72d794109428d2e3a84752a6f4, type: 3}
   maxTime: 4
   minTime: 5
 --- !u!4 &1066379600
@@ -11146,7 +11142,7 @@ GameObject:
   - component: {fileID: 1621784290}
   - component: {fileID: 1621784293}
   m_Layer: 5
-  m_Name: GameCursor
+  m_Name: Game Cursor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11169,7 +11165,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 128, y: 128}
+  m_SizeDelta: {x: 64, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1621784290
 Animator:
@@ -11179,7 +11175,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1621784288}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: a66caa2a050b46c4aad39387c2c9dc0d, type: 2}
   m_CullingMode: 0
@@ -11599,8 +11595,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 8967196057861636933, guid: a80c3f4e643e92645ae04331710e1482, type: 3}
-  - {fileID: 4480211305165329550, guid: e9530812eb98129419e1628ef6db4efb, type: 3}
-  - {fileID: 4480211305165329550, guid: ab56bc72d794109428d2e3a84752a6f4, type: 3}
   maxTime: 10
   minTime: 12
 --- !u!4 &1823033645
@@ -11898,8 +11892,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 8967196057861636933, guid: a80c3f4e643e92645ae04331710e1482, type: 3}
-  - {fileID: 4480211305165329550, guid: e9530812eb98129419e1628ef6db4efb, type: 3}
-  - {fileID: 4480211305165329550, guid: ab56bc72d794109428d2e3a84752a6f4, type: 3}
   maxTime: 2
   minTime: 6
 --- !u!4 &1966912148
