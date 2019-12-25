@@ -7,7 +7,6 @@ using TMPro;
 
 public class Weapon : MonoBehaviour
 {
-    [SerializeField]
     private Transform firePoint;
     [SerializeField]
     private GameObject bullet;
@@ -42,11 +41,17 @@ public class Weapon : MonoBehaviour
     [SerializeField]
     private string audioString;
 
+    [SerializeField]
+    private float spreadDegree;
+    [SerializeField]
+    private int numberOfBullets;
+
     public bool isOneHanded;
 
     // Start is called before the first frame update
     void Start()
     {
+        firePoint = transform.Find("FirePoint");
         bullets = maxBullets;
         reloadTimer = 0f;
         bulletTimer = 0f;
@@ -62,7 +67,8 @@ public class Weapon : MonoBehaviour
         if (!reloading)
         {
             // Allows firing when button is held down (for user experience).
-            if (Input.GetButton("Fire1") && (bulletTimer += Time.deltaTime) >= 1f / bulletsPerSecond)
+           
+            if (Input.GetButtonDown("Fire1") || (Input.GetButton("Fire1") && (bulletTimer += Time.deltaTime) >= 1f / bulletsPerSecond))
             {
                 Shoot();
             }
@@ -92,8 +98,15 @@ public class Weapon : MonoBehaviour
      */
     void Shoot()
     {
-        Instantiate(bullet, firePoint.position, firePoint.rotation).GetComponent<Bullet>().damage = damage + damageBonus;
-        Instantiate(muzzleFlash, firePoint.position, firePoint.rotation);
+        for (int i = 0; i < numberOfBullets; ++i) {
+            Bullet b = Instantiate(bullet, firePoint.position, firePoint.rotation).GetComponent<Bullet>();
+            b.damage = damage + damageBonus;
+            b.transform.Rotate(Vector3.forward * UnityEngine.Random.Range(-1f, 1f) * spreadDegree);
+        }
+        if (muzzleFlash != null)
+        {
+            Instantiate(muzzleFlash, firePoint.position, firePoint.rotation);
+        }
         AudioManager.instance.Play(audioString);
         CameraShaker.Instance.ShakeOnce(shakeMagnitude, shakeRoughness, 0.1f, 0.2f);
         bulletTimer = 0f;

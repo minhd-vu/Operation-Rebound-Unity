@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using EZCameraShake;
 
 public class Player : MonoBehaviour
 {
@@ -29,7 +30,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float regenTime;
     [SerializeField]
-    private GameObject healthBar;
+    private Image healthBar;
     [SerializeField]
     private GameObject damageParticles;
 
@@ -38,7 +39,6 @@ public class Player : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI scoreText;
 
-    public Image img;
 
     private enum States
     {
@@ -60,9 +60,6 @@ public class Player : MonoBehaviour
         healthPerSecondBonus = 0f;
         score = 0;
 
-        healthBar = Instantiate(healthBar);
-        healthBar.GetComponent<HealthBar>().target = transform;
-
         weapon = Instantiate(weapon, transform);
         GetComponent<SpriteRenderer>().sprite = sprites[weapon.isOneHanded ? (int)States.ONE_HAND : (int)States.TWO_HAND];
     }
@@ -77,9 +74,11 @@ public class Player : MonoBehaviour
         }
 
         // Update the health bar.
-        healthBar.GetComponent<HealthBar>().image.fillAmount = health / maxHealth;
-        img.GetComponent<Image>().fillAmount = health / maxHealth;
-        scoreText.text = "Score: " + score;
+        healthBar.GetComponent<Image>().fillAmount = health / maxHealth;
+        scoreText.text = score + "";
+
+        float shake = (maxHealth - health) / maxHealth * 2f;
+        CameraShaker.Instance.ShakeOnce(shake, shake, 0.1f, Time.deltaTime);
     }
 
     /**
@@ -87,8 +86,10 @@ public class Player : MonoBehaviour
      */
     public void damage(float damage)
     {
-        health -= damage;
-        Debug.Log(health);
-        Instantiate(damageParticles, transform);
+        if (!gameObject.GetComponent<PlayerController>().isDashing)
+        {
+            health -= damage;
+            Instantiate(damageParticles, transform);
+        }
     }
 }

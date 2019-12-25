@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy Health Bar
   - Bullet Counter
+  - Reload Indicator
   layers:
   - Default
   - TransparentFX
@@ -16,9 +17,9 @@ TagManager:
   - 
   - 
   - Collision
-  - 
-  - 
-  - 
+  - Projectile
+  - Player
+  - Enemy
   - 
   - 
   - 

@@ -21,10 +21,12 @@ public class Zombie : MonoBehaviour
     [SerializeField]
     private GameObject damageParticles;
 
+    private Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<AIPath>().maxSpeed = moveSpeed;
+        //GetComponent<AIPath>().maxSpeed = moveSpeed;
         healthBar = Instantiate(healthBar);
         healthBar.GetComponent<HealthBar>().target = transform;
         healthBar.SetActive(false);
@@ -33,6 +35,8 @@ public class Zombie : MonoBehaviour
         healthBarTimer = 0f;
 
         health = maxHealth;
+
+        animator = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -51,6 +55,7 @@ public class Zombie : MonoBehaviour
                 healthBar.SetActive(false);
             }
         }
+
     }
 
     /**
@@ -60,10 +65,18 @@ public class Zombie : MonoBehaviour
     {
         if (collision.gameObject.name.Equals("Player"))
         {
+            animator.SetBool("IsAttacking", true);
+            StartCoroutine(Attack(animator.GetCurrentAnimatorStateInfo(0).length));
             Player player = collision.gameObject.GetComponent<Player>();
             player.damage(attackDamage);
             AudioManager.instance.Play("Enemy Attack");
         }
+    }
+
+    IEnumerator Attack(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        animator.SetBool("IsAttacking", false);
     }
 
     /**

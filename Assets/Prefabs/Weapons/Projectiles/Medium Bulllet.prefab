@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6996835546916587104}
   - component: {fileID: 8483945587352665179}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sprite Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Intensity: 0.5
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 0000000069a8e281d388952e0575ad50870a09d49be81046357997a6854f0f431f970b49
-  m_LightCookieSprite: {fileID: 21300000, guid: 8bb7ff56ae0fea14587d1076ed2c6c0a,
+  m_LightCookieSprite: {fileID: 21300000, guid: 7cd926ad4ec57c34e948f556c0775593,
     type: 3}
   m_UseNormalMap: 0
   m_LightOrder: 0
@@ -84,7 +84,7 @@ GameObject:
   - component: {fileID: 4642350767651845659}
   - component: {fileID: 4642350767651845658}
   - component: {fileID: -4839017532360186080}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Medium Bulllet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,6 +217,6 @@ MonoBehaviour:
   speed: 16
   range: 20
   damage: 0
-  muzzleFlashLight: {fileID: 7403891906062648247, guid: 52d15a4902845ad49a2a36c18077b50a,
+  hitEffect: {fileID: 7886777790140101917, guid: 0eb6b811fb6f8114dbea3231ebc5cf72,
     type: 3}
-  hitEffect: {fileID: 0}
+  blastRadius: 0

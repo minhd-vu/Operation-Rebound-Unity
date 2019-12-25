@@ -9,11 +9,11 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            leaderboard.gameObject.SetActive(!leaderboard.gameObject.activeSelf);
-            Time.timeScale = leaderboard.gameObject.activeSelf ? 0f : 1f;
-        }
+        //if (Input.GetKeyDown(KeyCode.Tab))
+        //{
+        //    leaderboard.gameObject.SetActive(!leaderboard.gameObject.activeSelf);
+        //    Time.timeScale = leaderboard.gameObject.activeSelf ? 0f : 1f;
+        //}
     }
 
     public void EndGame(int score)
@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
         if (!ended)
         {
             ended = true;
-            leaderboard.AddLeaderboardEntry(score, "You");
+            //leaderboard.AddLeaderboardEntry(score, "You");
             Restart();
         }
     }

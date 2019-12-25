@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using EZCameraShake;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -48,7 +49,13 @@ public class Bullet : MonoBehaviour
 
         if (hitEffect != null)
         {
-            Instantiate(hitEffect, transform.position, Quaternion.identity);
+            GameObject he = Instantiate(hitEffect, transform.position, transform.rotation);
+            he.transform.Rotate(Vector3.forward * 90f);
+
+        }
+
+        if (blastRadius > 0)
+        {
             Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, blastRadius);
             foreach (Collider2D collider in colliders)
             {
@@ -60,18 +67,17 @@ public class Bullet : MonoBehaviour
                     enemy.damage(damage * effect);
                 }
             }
+
+            CameraShaker.Instance.ShakeOnce(2f, 3f, 0.1f, 0.2f);
         }
 
-        else
+        else if ((enemy = collision.gameObject.GetComponent<Zombie>()) != null)
         {
-            if ((enemy = collision.gameObject.GetComponent<Zombie>()) != null)
-            {
-                // Damage the enemy.
-                enemy.damage(damage);
+            // Damage the enemy.
+            enemy.damage(damage);
 
-                // Create damage numbers appear after an enemy being damaged.
-                //Instantiate(damageIndicator, enemy.transform.position, Quaternion.Euler(Vector3.zero)).GetComponent<NumberIndicator>().number = (int)(damage * 100);
-            }
+            // Create damage numbers appear after an enemy being damaged.
+            //Instantiate(damageIndicator, enemy.transform.position, Quaternion.Euler(Vector3.zero)).GetComponent<NumberIndicator>().number = (int)(damage * 100);
         }
 
         Destroy(gameObject);

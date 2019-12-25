@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,15 +7,19 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField]
-    private float moveSpeed;
-    [HideInInspector]
-    public float moveSpeedBonus;
+    [SerializeField] private float moveSpeed;
+    [HideInInspector] public float moveSpeedBonus;
     //[SerializeField]
     //private float rotateSpeed;
     private Rigidbody2D rb;
     private Vector2 input;
     private Vector2 mousePosition;
+
+    public bool isDashing = false;
+    [SerializeField] private float dashForce = 3f;
+    [SerializeField] private float dashDuration = 0.3f;
+    private Coroutine dash;
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,8 +31,33 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        // Get input from player
+        input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        if (Input.GetKeyDown(KeyCode.Space) && !isDashing)
+        {
+            dash = StartCoroutine(Dash(dashDuration));
+        }
+    }
+
+    public IEnumerator Dash(float duration)
+    {
+        Vector3 dashVector = rb.transform.position + (Vector3)input * dashForce;
+        rb.DOMove(dashVector, duration);
+        Physics2D.IgnoreLayerCollision(10, 11, isDashing = true);
+        yield return new WaitForSeconds(duration);
+        Physics2D.IgnoreLayerCollision(10, 11, isDashing = false);
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (isDashing && dash != null)
+        {
+            rb.DOKill();
+            StopCoroutine(dash);
+            Physics2D.IgnoreLayerCollision(10, 11, isDashing = false);
+        }
     }
 
     private void FixedUpdate()
@@ -35,23 +65,12 @@ public class PlayerController : MonoBehaviour
         // Move the player based on the input.
         float speed = moveSpeed + moveSpeedBonus;
 
-        // Move the player slower when they are moving diagonally to maintain the same magnitude.
-        if (Math.Abs(input.x) > 0 && Math.Abs(input.y) > 0)
+        if (!isDashing)
         {
-            speed /= Mathf.Sqrt(2);
+            rb.velocity = new Vector2(input.x * speed, input.y * speed);
         }
 
-        //transform.Translate(Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime, Input.GetAxisRaw("Vertical") * speed * Time.deltaTime, 0, Space.World);
-        //rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime, Input.GetAxisRaw("Vertical") * speed * Time.deltaTime);
-        rb.velocity = new Vector2(input.x * speed, input.y * speed);
-        //rb.AddForce(new Vector2(input.x * speed, input.y * speed));
-
-        /**
-         * Rotate the player towards the mouse cursor.
-         * Find the direction vector.
-         * Find the angle and convert it into degrees.
-         * Slerp the value for a smooth rotation (removed).
-         **/
+        // Rotate the player
         Vector2 direction = mousePosition - rb.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.AngleAxis(angle, Vector3.forward), dir.normalized.magnitude * rotationSpeed * Time.deltaTime);
