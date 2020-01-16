@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    public Transform target;
-    public Vector3 offset;
-    public Image image;
+    [SerializedField] private Transform target;
+    [SerializedField] private Vector3 offset;
+    [SerializedField] private Image image;
 
     // Update is called once per frame
     void Update()
