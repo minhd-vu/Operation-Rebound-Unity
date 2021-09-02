@@ -2,7 +2,7 @@
 <p align="center">
   <h3 align="center">Operation Rebound Unity</h3>
   <p align="center">
-    Unity Remake of [Operation Rebound](https://github.com/minhd-vu/Operation-Rebound), a top down post-apoctalyptic shooter.
+    Unity Remake of <a href="https://github.com/minhd-vu/Operation-Rebound">Operation Rebound</a>, a top down post-apoctalyptic shooter.
     <br />
     <a href="https://minhd-vu.github.io/Operation-Rebound-Unity/index.html">View Demo</a>
     ·
