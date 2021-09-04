@@ -12,6 +12,10 @@
   </p>
 </p>
 
+## Screenshots
+
+![gameplay](docs/images/gameplay.png?raw=true "Gameplay")
+
 ## Contributors
 - Project Leader: Minh Vu
 - Art Director: Tung Tran
